@@ -5,7 +5,7 @@
 	<article>
 		<header>
 			<h1 class="titreBillet"><?= $billet['title'] ?></h1>
-			<time><?= $billet['date'] ?></time>
+			<time><?= $billet['date_t'] ?></time>
 		</header>
 		<p><?= $billet['content'] ?></p>
 	</article>
