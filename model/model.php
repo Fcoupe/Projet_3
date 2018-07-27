@@ -31,7 +31,7 @@ function getBillet($idBillet)
 	}
 }
 
-function getCommentaires($idBillet)
+function getComments($idBillet)
 {
 	$db = getDb();
 	$commentaires = $db->prepare('select COM_ID as id, COM_DATE as date_t,'

@@ -20,4 +20,4 @@
 	<?php endforeach; ?>
 	<?php $content = ob_get_clean(); ?>
 
-	<?php require ('view/temp.php')
+	<?php require ('../view/temp.php')
