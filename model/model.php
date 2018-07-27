@@ -10,6 +10,6 @@ function getBillets()
 function getDb()
 {// Connexion a la DataBase, instancie et renvoie l'objet PDO associer
 	$db = new PDO('mysql:host=localhost;dbname=Blog;charset=utf8', 
-          'root', '');
+          'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 	return $db;
 }
