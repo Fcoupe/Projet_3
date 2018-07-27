@@ -13,8 +13,8 @@ function home()
 function billet($idBillet)
 {
 	$billet = getBillet($idBillet);
-	$commentaires = getComents($idBillet);
-	require ('view/view_Billet.php');
+	$comments = getComments($idBillet);
+	require ('view/view_billet.php');
 }
 
 //Affichage des erreurs

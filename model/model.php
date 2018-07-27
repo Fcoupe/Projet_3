@@ -17,10 +17,10 @@ function getDb()
 function getBillet($idBillet)
 {// Renvoie les informations sur un billet
 	$db = getDb();
-	$billet = $db->prepare('SELECT BIL_ID as id,  BIL_DATE as date_t,' . 'BIL_TITRE as title, BIL_CONTENU as content from T_BILLET' . 'WHERE BIL_ID=?');
+	$billet = $db->prepare('SELECT BIL_ID as id,  BIL_DATE as date_t,' . ' BIL_TITRE as title, BIL_CONTENU as content from T_BILLET' . ' WHERE BIL_ID = ?');
 	$billet->execute(array($idBillet));
 
-	if ($billet->rowCount () == 1)
+	if ($billet->rowCount() == 1)
 	{
 		return $billet->fetch(); // Accés a la 1er ligne de resultat
 	}
@@ -34,10 +34,10 @@ function getBillet($idBillet)
 function getComments($idBillet)
 {
 	$db = getDb();
-	$commentaires = $db->prepare('select COM_ID as id, COM_DATE as date_t,'
-    . ' COM_AUTEUR as author, COM_CONTENU as content from T_COMMENTAIRE'
+	$comments = $db->prepare('select COM_ID as id, COM_DATE as date_t,'
+    . ' COM_AUTEUR as author, COM_CONTENU as content from T_COM'
     . ' where BIL_ID=?');
-    $commentaires->execute(array($idBillet));
-    return $commentaires;
+    $comments->execute(array($idBillet));
+    return $comments;
 }
 

@@ -6,18 +6,18 @@
 			<h1 class="titreBillet"><?= $billet['title'] ?></h1>
 			<time><?= $billet['date_t'] ?></time>
 		</header>
-		<p><?= $Billet['content'] ?></p>
+		<p><?= $billet['content'] ?></p>
 	</article>
 	<hr />
 	<header>
 		<h1 id="titreReponses">Réponse à <?= $billet['title'] ?></h1>
 	</header>
-	<?php foreach ($commentaires as $commentaire): ?>
-		{
-			<p><?= $commentaire['author'] ?> dit :</p>
-			<p><?= $commentaire['content'] ?></p>
-		}
+	<?php foreach ($comments as $comment): ?>
+		
+			<p><?= $comment['author'] ?> dit :</p>
+			<p><?= $comment['content'] ?></p>
+		
 	<?php endforeach; ?>
 	<?php $content = ob_get_clean(); ?>
 
-	<?php require ('../view/temp.php')
+	<?php require ('view/temp.php'); ?>
