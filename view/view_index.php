@@ -4,7 +4,7 @@
 <?php foreach ($billets as $billet): ?>
 	<article>
 		<header>
-			<h1 class="titleBillet"><?= $billet['title'] ?></h1>
+			<h1 class="titreBillet"><?= $billet['title'] ?></h1>
 			<time><?= $billet['date'] ?></time>
 		</header>
 		<p><?= $billet['content'] ?></p>

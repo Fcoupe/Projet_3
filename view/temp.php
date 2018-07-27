@@ -2,19 +2,19 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8" />
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet"  href="assets/css/style.css">
 	<title><?= $title ?></title> <!-- Element spécifique au titre ! -->
 </head>
 <body>
-	<div id="container">
+	<div id="global">
 		<header>
-			<a href="index.php"><h1 id="titleBlog">Mon Blog</h1></a>
+			<a href="index.php"><h1 id="titreBlog">Mon Blog</h1></a>
 			<p>Je vous souhaite la bienvenue sur ce modeste blog.</p>
 		</header>
-		<div id="content">
+		<div id="contenu">
 			<?= $content ?> <!-- Variable renvoyant le contenu -->
 		</div>
-		<footer id="footer">
+		<footer id="piedBlog">
 			Blog Réaliser avec une architecture MVC.
 		</footer>
 	</div>  <!-- Fermeture de la div container -->
