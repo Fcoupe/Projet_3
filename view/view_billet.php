@@ -1,6 +1,6 @@
 <?php $this->title = "Mon Blog - " . $billet['title']; ?>
  
-<?php ob_start(); ?>
+
 	<article>
 		<header>
 			<h1 class="titreBillet"><?= $billet['title'] ?></h1>
@@ -18,6 +18,4 @@
 			<p><?= $comment['content'] ?></p>
 		
 	<?php endforeach; ?>
-	<?php $content = ob_get_clean(); ?>
-
-	<?php require ('view/temp.php'); ?>
+	

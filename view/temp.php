@@ -17,6 +17,6 @@
 		<footer id="piedBlog">
 			Blog Réaliser avec une architecture MVC.
 		</footer>
-	</div>  <!-- Fermeture de la div container -->
+	</div>  <!-- Fermeture de la div global -->
 </body>
 </html>
