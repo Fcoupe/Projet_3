@@ -1,4 +1,4 @@
-<?php $title = 'Mon BLog' ?>
+<?php $this->title = 'Mon BLog' ?>
 
 <?php ob_start() ?>
 <p>Une erreur est survenue : <?= $msgError ?></p>

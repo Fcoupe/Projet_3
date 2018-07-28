@@ -1,4 +1,4 @@
-<?php $title = "Mon Blog - " . $billet['title']; ?>
+<?php $this->title = "Mon Blog - " . $billet['title']; ?>
 
 <?php ob_start(); ?>
 	<article>
