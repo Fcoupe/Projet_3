@@ -6,7 +6,6 @@ class Billet extends Model
 {
 	public function getBillets()
 	{// Renvoie la liste de tous les billets, tier par ID décroisant
-		$db = $this->getDb();
 	    $sql = 'select BIL_ID as id, BIL_DATE as date_t,' . ' BIL_TITRE as title, BIL_CONTENU as content from T_BILLET' . ' order by BIL_ID desc';
 	    $billets = $this->executeReq($sql);
 	    return $billets;
@@ -14,7 +13,7 @@ class Billet extends Model
 
 	public function getBillet($idBillet)
 	{// Renvoie les informations sur un billet
-		$db = $this->getDb();
+		
 		$sql = 'SELECT BIL_ID as id,  BIL_DATE as date_t,' . ' BIL_TITRE as title, BIL_CONTENU as content from T_BILLET' . ' WHERE BIL_ID = ?';
 		$billet = $this->executeReq($sql, array($idBillet));
 

@@ -25,8 +25,3 @@ class controllerBillet
 }
 
 
-//Affichage des erreurs
-function error($msgError)
-{
-	require ('view/view_error.php');
-}
