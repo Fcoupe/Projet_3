@@ -22,6 +22,12 @@ class controllerBillet
 		$view = new view('billet');
 		$view->generate(array('billet' => $billet, 'comments' => $comments));
 	}
+
+	public function addComments ($author, $content, $idBillet)
+	{
+		$this->comments->addComment($author, $content, $idBillet);
+		$this->billet($idBillet);
+	}
 }
 
 

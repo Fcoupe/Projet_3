@@ -14,8 +14,18 @@
 	</header>
 	<?php foreach ($comments as $comment): ?>
 		
-			<p><?= $comment['author'] ?> dit :</p>
-			<p><?= $comment['content'] ?></p>
+		<p><?= $comment['author'] ?> dit :</p>
+		<p><?= $comment['content'] ?></p>
 		
 	<?php endforeach; ?>
+
+	<form method="post" action="index.php?action=addComments">
+
+    	<input id="auteur" name="author" type="text" placeholder="Votre pseudo" required /><br />
+    	<textarea id="txtCommentaire" name="content" rows="5" 
+              placeholder="Votre commentaire" required></textarea><br />
+    	<input type="hidden" name="id" value="<?= $billet['id'] ?>" />
+    	<input type="submit" value="Valider" />
+
+	</form>
 	

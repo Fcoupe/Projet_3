@@ -23,24 +23,26 @@ class router
 			{
 				if ($_GET['action'] == 'billet')
 				{
-					if (isset($_GET['id']))
-					{
-						$idBillet = intval($_GET['id']);
+					$idBillet = intval($this->getParams($_GET, 'id'));
 
-						if ($idBillet != 0)
-						{
-							$this->ctrlBillet->billet($idBillet);
-						}
-						else
-              			{
-              			throw new Exception("Identifiant de billet non valide");
-              			}
+					if ($idBillet != 0)
+					{
+						$this->ctrlBillet->billet($idBillet);
 					}
 					else
-					{
-            		throw new Exception("Identifiant de billet non défini");
-					}
+              		{
+              			throw new Exception("Identifiant de billet non valide");
+              		}
 				}
+
+				else if ($_GET['action'] == 'addComments')
+					{
+            			$author = $this->getParams($_POST, 'author');
+            			$content = $this->getParams($_POST, 'content');
+            			$idBillet = $this->getParams($_POST, 'id');
+            			$this->ctrlBillet->addComments($author, $content, $idBillet);
+					}
+				
 				else
 				{
 					throw new Exception("Action non valide");
@@ -57,6 +59,20 @@ class router
 			$this->error($e->getMessage());
 		}
 	}// fin de function
+
+	private function getParams($table, $name)
+	{
+		if (isset($table[$name]))
+		{
+			return $table[$name];
+		}
+
+		else
+		{
+			throw new Exception("Paramètre '$name' absent" );
+			
+		}
+	}
 
 	private function error($msgError)
 	{
