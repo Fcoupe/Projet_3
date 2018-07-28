@@ -29,7 +29,7 @@ class router
 
 						if ($idBillet != 0)
 						{
-							$this->ctrlBillet->billet($idbillet);
+							$this->ctrlBillet->billet($idBillet);
 						}
 						else
               			{

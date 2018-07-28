@@ -24,7 +24,7 @@ class Billet extends Model
 
 		else 
 		{
-			throw new Exception ("Aucun Billet ne correspond a l'identifiant '$idbillet'"); 
+			throw new Exception ("Aucun Billet ne correspond a l'identifiant '$idBillet'"); 
 		}
 	}
 }

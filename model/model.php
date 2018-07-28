@@ -17,17 +17,18 @@
 			$result = $this->getDb()->prepare($sql);
 			$result->execute($params);
 		}
+		return $result;
 	}
 
 	private function getDb()
 	{// Connexion a la DataBase, instancie et renvoie l'objet PDO associer
 		if ($this->db == null)
 		{
-		$db = new PDO('mysql:host=localhost;dbname=Blog;charset=utf8', 
+		$this->db = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 
 	          'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		}
 	
-		return $this->$db;
+		return $this->db;
 	}
 }
 

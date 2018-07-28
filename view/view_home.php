@@ -1,4 +1,4 @@
-<?php $title = "Mon Blog"; ?>
+<?php $this->title = "Mon Blog"; ?>
 
 <?php ob_start() ?>
 <?php foreach ($billets as $billet): ?>

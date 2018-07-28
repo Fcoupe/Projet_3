@@ -13,7 +13,7 @@ class view
 	public function generate($data)
 	{// Génération de la partie spécifique de la vue 
 		$content = $this->generateFile($this->file, $data);
-		$view = $this->generaFile('view/temp.php', array('title' => $this->title, 'content' => $content));
+		$view = $this->generateFile('view/temp.php', array('title' => $this->title, 'content' => $content));
 		echo $view;
 	}
 
@@ -27,7 +27,7 @@ class view
 			ob_start();
 		// Inclut le fichier vue
       	// Son résultat est placé dans le tampon de sortie
-			require ('$file');
+			require $file;
 		// Arrêt de la temporisation et renvoi du tampon de sortie
 			return ob_get_clean();
 		}

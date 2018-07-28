@@ -1,5 +1,5 @@
 <?php $this->title = "Mon Blog - " . $billet['title']; ?>
-
+ 
 <?php ob_start(); ?>
 	<article>
 		<header>
