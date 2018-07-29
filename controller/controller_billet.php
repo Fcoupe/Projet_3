@@ -28,6 +28,14 @@ class controllerBillet
 		$this->comments->addComment($author, $content, $idBillet);
 		$this->billet($idBillet);
 	}
+
+	public function addBil ($author, $content)
+	{
+		$this->billet->addBillet($author, $content);
+		
+
+	}
+
 }
 
 

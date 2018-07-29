@@ -36,18 +36,27 @@ class router
 				}
 
 				else if ($_GET['action'] == 'addComments')
-					{
-            			$author = $this->getParams($_POST, 'author');
-            			$content = $this->getParams($_POST, 'content');
-            			$idBillet = $this->getParams($_POST, 'id');
-            			$this->ctrlBillet->addComments($author, $content, $idBillet);
-					}
-				
+				{
+	            	$author = $this->getParams($_POST, 'author');
+	            	$content = $this->getParams($_POST, 'content');
+	            	$idBillet = $this->getParams($_POST, 'id');
+	            	$this->ctrlBillet->addComments($author, $content, $idBillet);
+				}
+
+				else if ($_GET['action'] == 'addBil')
+				{
+					$author = $this->getParams($_POST, 'author');
+					$content = $this->getParams($_POST, 'content');
+					$this->ctrlBillet->addBil($author, $content);
+				}
+					
 				else
 				{
 					throw new Exception("Action non valide");
 				}
+
 			}
+
 			else // si aucune action definit alors affichage de l'accueil
 			{
 				$this->ctrlHome->home();

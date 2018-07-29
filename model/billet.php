@@ -6,7 +6,7 @@ class Billet extends Model
 {
 	public function getBillets()
 	{// Renvoie la liste de tous les billets, tier par ID décroisant
-	    $sql = 'select BIL_ID as id, BIL_DATE as date_t,' . ' BIL_TITRE as title, BIL_CONTENU as content from T_BILLET' . ' order by BIL_ID desc';
+	    $sql = 'SELECT BIL_ID as id, BIL_DATE as date_t,' . ' BIL_TITRE AS title, BIL_CONTENU AS content from T_BILLET' . ' order by BIL_ID desc';
 	    $billets = $this->executeReq($sql);
 	    return $billets;
 	}
@@ -26,5 +26,12 @@ class Billet extends Model
 		{
 			throw new Exception ("Aucun Billet ne correspond a l'identifiant '$idBillet'"); 
 		}
+	}
+
+	public function addBillet ($title, $content)
+	{
+		$sql = 'INSERT INTO T_BILLET(BIL_DATE, BIL_TITRE, BIL_CONTENU)' . 'VALUES(?, ?, ?)';
+		$date = date('Y-m-d H:i:s');
+		$billet = $this->executeReq($sql, array($date, $title, $content));
 	}
 }
