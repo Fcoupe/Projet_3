@@ -4,6 +4,7 @@
 	<article>
 		<header>
 			<h1 class="titreBillet"><?= $billet['title'] ?></h1>
+			<a href="<?= "index.php?action=updateView&id=" .  $billet['id'] ?>">Modifier</a>
 			<time><?= $billet['date_t'] ?></time>
 		</header>
 		<p><?= $billet['content'] ?></p>

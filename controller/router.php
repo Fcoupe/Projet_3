@@ -49,11 +49,31 @@ class router
 					$content = $this->getParams($_POST, 'content');
 					$this->ctrlBillet->addBil($author, $content);
 				}
-					
-				else
+
+				else if ($_GET['action'] == 'updateView')
 				{
-					throw new Exception("Action non valide");
+					$idBillet = intval($this->getParams($_GET, 'id'));
+
+					if ($idBillet != 0)
+					{
+						$this->ctrlBillet->updateView($idBillet);
+					}
+					else
+              		{
+              			throw new Exception("Identifiant de billet non valide");
+              		
+					}
 				}
+
+				else if ($_GET['action'] == 'updateBil')
+				{
+					$title = $this->getParams($_POST, 'title');
+					$content = $this->getParams($_POST, 'content');
+					$idBillet = $this->getParams($_GET, 'id');
+					$this->ctrlBillet->UpdateBil($title, $content, $idBillet);
+				}
+					
+				
 
 			}
 
@@ -61,7 +81,7 @@ class router
 			{
 				$this->ctrlHome->home();
 			}
-		}
+		}// fin de try
 
 		catch (Exception $e)
 		{

@@ -32,8 +32,18 @@ class controllerBillet
 	public function addBil ($author, $content)
 	{
 		$this->billet->addBillet($author, $content);
-		
+	}
 
+	public function updateView($idBillet)
+	{
+		$billet = $this->billet->getBillet($idBillet);
+		$view = new view("updateView");
+		$view->generate(array('billet' => $billet));
+	}
+
+	public function updateBil($title, $content, $idBillet)
+	{
+		$this->billet->updateBills($title, $content, $idBillet);
 	}
 
 }

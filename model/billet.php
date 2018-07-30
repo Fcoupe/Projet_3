@@ -34,4 +34,10 @@ class Billet extends Model
 		$date = date('Y-m-d H:i:s');
 		$billet = $this->executeReq($sql, array($date, $title, $content));
 	}
+
+	public function updateBills ($title, $content, $idBillet)
+	{
+		$sql = 'UPDATE T_BILLET SET BIL_TITRE = ?, BIL_CONTENU = ? WHERE BIL_ID = ?';
+		$billet = $this->executeReq($sql, array($title, $content, $idBillet));
+	}
 }
