@@ -5,6 +5,7 @@
 		<header>
 			<h1 class="titreBillet"><?= $billet['title'] ?></h1>
 			<a href="<?= "index.php?action=updateView&id=" .  $billet['id'] ?>">Modifier</a>
+			<a href="<?= "index.php?action=delete&id=" . $billet['id'] ?>">Supprimer le Billet !</a>
 			<time><?= $billet['date_t'] ?></time>
 		</header>
 		<p><?= $billet['content'] ?></p>
@@ -17,6 +18,7 @@
 		
 		<p><?= $comment['author'] ?> dit :</p>
 		<p><?= $comment['content'] ?></p>
+		<a href="<?="index.php?action=updateComView&id=" . $comment['id']?>">Modifier Commentaire !</a>
 		
 	<?php endforeach; ?>
 

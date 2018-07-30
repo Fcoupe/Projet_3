@@ -23,11 +23,7 @@ class controllerBillet
 		$view->generate(array('billet' => $billet, 'comments' => $comments));
 	}
 
-	public function addComments ($author, $content, $idBillet)
-	{
-		$this->comments->addComment($author, $content, $idBillet);
-		$this->billet($idBillet);
-	}
+	
 
 	public function addBil ($author, $content)
 	{
@@ -44,6 +40,12 @@ class controllerBillet
 	public function updateBil($title, $content, $idBillet)
 	{
 		$this->billet->updateBills($title, $content, $idBillet);
+
+	}
+
+	public function delete($idBillet)
+	{
+		$this->billet->deleteBills($idBillet);
 	}
 
 }

@@ -40,4 +40,10 @@ class Billet extends Model
 		$sql = 'UPDATE T_BILLET SET BIL_TITRE = ?, BIL_CONTENU = ? WHERE BIL_ID = ?';
 		$billet = $this->executeReq($sql, array($title, $content, $idBillet));
 	}
+
+	public function deleteBills ($idBillet)
+	{
+		$sql ='DELETE fROM T_BILLET WHERE BIL_ID = ?';
+		$billet = $this->executeReq($sql, array($idBillet));
+	}
 }

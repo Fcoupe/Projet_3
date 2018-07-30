@@ -2,17 +2,20 @@
 
 require_once ('controller/controller_home.php');
 require_once ('controller/controller_billet.php');
+require_once ('controller/controller_Comment.php');
 require_once ('view/view.php');
 
 class router 
 {
 	private $ctrlHome;
 	private $ctrlBillet;
+	private $ctrlComment;
 
 	public function __construct()
 	{
 		$this->ctrlHome = new controllerHome();
 		$this->ctrlBillet = new controllerBillet();
+		$this->ctrlComment = new controllerComment();
 	}
 
 	public function routerReq()
@@ -40,7 +43,7 @@ class router
 	            	$author = $this->getParams($_POST, 'author');
 	            	$content = $this->getParams($_POST, 'content');
 	            	$idBillet = $this->getParams($_POST, 'id');
-	            	$this->ctrlBillet->addComments($author, $content, $idBillet);
+	            	$this->ctrlComment->addComments($author, $content, $idBillet);
 				}
 
 				else if ($_GET['action'] == 'addBil')
@@ -65,15 +68,42 @@ class router
 					}
 				}
 
+				else if ($_GET['action'] == 'updateComView')
+				{
+					$idCom = intval($this->getParams($_GET, 'id'));
+					if ($idCom != 0)
+					{
+						$this->ctrlComment->updateComView($idCom);
+					}
+					else
+              		{
+              			throw new Exception("Identifiant de billet non valide");
+              		
+					}
+				}
+
 				else if ($_GET['action'] == 'updateBil')
 				{
 					$title = $this->getParams($_POST, 'title');
 					$content = $this->getParams($_POST, 'content');
-					$idBillet = $this->getParams($_GET, 'id');
+					$idBillet = $this->getParams($_POST, 'id');
 					$this->ctrlBillet->UpdateBil($title, $content, $idBillet);
 				}
+
+				else if ($_GET['action'] == "updateCom")
+				{
+					$idCom = $this->getParams($_GET, 'id');
+					$author = $this->getParams($_POST, 'author');
+					$content = $this->getParams($_POST, 'content');
+					$this->ctrlComment->updateCom($idCom, $author, $content);
+				}
+
 					
-				
+				else if ($_GET['action'] == 'delete')
+				{
+					$idBillet = $this->getParams($_GET, 'id');
+					$this->ctrlBillet->delete($idBillet);
+				}
 
 			}
 
