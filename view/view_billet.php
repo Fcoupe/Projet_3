@@ -15,10 +15,12 @@
 		<h1 id="titreReponses">Réponse à <?= $billet['title'] ?></h1>
 	</header>
 	<?php foreach ($comments as $comment): ?>
-		
+		<a href="<?= "index.php?action=deleteComment&id=" . $comment['id']?>">Supprimer le commentaires</a>
+
 		<p><?= $comment['author'] ?> dit :</p>
 		<p><?= $comment['content'] ?></p>
-		<a href="<?="index.php?action=updateComView&id=" . $comment['id']?>">Modifier Commentaire !</a>
+		
+		<a href="<?= "index.php?action=updateComView&id=" . $comment['id']?>">Modifier Commentaire !</a>
 		
 	<?php endforeach; ?>
 
@@ -31,4 +33,6 @@
     	<input type="submit" value="Valider" />
 
 	</form>
+
+
 	

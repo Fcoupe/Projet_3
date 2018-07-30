@@ -105,6 +105,12 @@ class router
 					$this->ctrlBillet->delete($idBillet);
 				}
 
+				else if ($_GET['action'] == 'deleteComment')
+				{
+					$idCom = $this->getParams($_GET, 'id');
+					$this->ctrlComment->deleteComment($idCom);
+				}
+
 			}
 
 			else // si aucune action definit alors affichage de l'accueil

@@ -30,4 +30,9 @@ class controllerComment
 	{
 		$this->comments->updateComment($idCom, $author, $content);
 	}
+
+	public function deleteComment($idCom)
+	{
+		$this->comments->deleteCom($idCom);
+	}
 }
