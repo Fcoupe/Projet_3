@@ -17,7 +17,7 @@ h1 {
 }
 
 
-#global {
+#container {
     min-height: 100%;  /* Voir commentaire sur html et body plus haut */
     background: #666;
     width: 70%;
@@ -44,4 +44,8 @@ h1 {
 
 #txtBillet {
     width: 50%;
+}
+
+#menu {
+    background: #000;
 }
