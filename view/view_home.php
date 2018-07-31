@@ -10,16 +10,11 @@
 			<time><?= $billet['date_t'] ?></time>
 			
 		</header>
-		<p><?= $billet['content'] ?></p>
-		<a href="view/view_addBil.php">Ajouter Article()Temporaire</a>
-
-		
+		<p><?= $billet['content'] ?></p>	
 	</article>
 	
 	<hr />
 <?php endforeach; ?>
-
-
 
 <article>
 		<form method="post" action="index.php?action=addBil">

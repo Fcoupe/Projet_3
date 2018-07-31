@@ -68,19 +68,7 @@ class router
 					}
 				}
 
-				else if ($_GET['action'] == 'updateComView')
-				{
-					$idCom = intval($this->getParams($_GET, 'id'));
-					if ($idCom != 0)
-					{
-						$this->ctrlComment->updateComView($idCom);
-					}
-					else
-              		{
-              			throw new Exception("Identifiant de billet non valide");
-              		
-					}
-				}
+				
 
 				else if ($_GET['action'] == 'updateBil')
 				{
@@ -90,13 +78,6 @@ class router
 					$this->ctrlBillet->UpdateBil($title, $content, $idBillet);
 				}
 
-				else if ($_GET['action'] == "updateCom")
-				{
-					$idCom = $this->getParams($_GET, 'id');
-					$author = $this->getParams($_POST, 'author');
-					$content = $this->getParams($_POST, 'content');
-					$this->ctrlComment->updateCom($idCom, $author, $content);
-				}
 
 					
 				else if ($_GET['action'] == 'delete')
