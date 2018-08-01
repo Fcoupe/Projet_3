@@ -19,17 +19,7 @@ class controllerComment
 		
 	}
 
-	public function updateComview ($idCom)
-	{
-		$comments = $this->comments->getComment($idCom);
-		$view = new view("updateCom");
-		$view->generate(array('comments' => $comments));
-	}
-
-	public function updateCom($idCom, $author, $content)
-	{
-		$this->comments->updateComment($idCom, $author, $content);
-	}
+	
 
 	public function deleteComment($idCom)
 	{

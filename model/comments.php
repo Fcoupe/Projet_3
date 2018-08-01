@@ -37,11 +37,7 @@ class Comments extends Model
 	 $this->executeReq($sql , array($date, $author, $content, $idBillet));
 	 }
 
-	 public function updateComment($idCom, $author, $content)
-	 {
-	 	$sql = 'UPDATE T_COM SET COM_AUTEUR = ?, COM_CONTENU = ? WHERE COM_ID = ?';
-	 	$comments = $this->executeReq($sql, array($idCom, $author, $content));
-	 }
+	 
 
 	 public function deleteCom ($idCom)
 	 {

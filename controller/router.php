@@ -3,6 +3,7 @@
 require_once ('controller/controller_home.php');
 require_once ('controller/controller_billet.php');
 require_once ('controller/controller_Comment.php');
+require_once ('controller/controller_user.php');
 require_once ('view/view.php');
 
 class router 
@@ -10,12 +11,14 @@ class router
 	private $ctrlHome;
 	private $ctrlBillet;
 	private $ctrlComment;
+	private $ctrlUser;
 
 	public function __construct()
 	{
 		$this->ctrlHome = new controllerHome();
 		$this->ctrlBillet = new controllerBillet();
 		$this->ctrlComment = new controllerComment();
+		$this->ctrlUser = new controllerUser();
 	}
 
 	public function routerReq()
