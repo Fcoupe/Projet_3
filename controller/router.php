@@ -4,6 +4,7 @@ require_once ('controller/controller_home.php');
 require_once ('controller/controller_billet.php');
 require_once ('controller/controller_Comment.php');
 require_once ('controller/controller_user.php');
+require_once ('controller/controller_menu.php');
 require_once ('view/view.php');
 
 class router 
@@ -12,6 +13,7 @@ class router
 	private $ctrlBillet;
 	private $ctrlComment;
 	private $ctrlUser;
+	private $ctrlMenu;
 
 	public function __construct()
 	{
@@ -19,6 +21,7 @@ class router
 		$this->ctrlBillet = new controllerBillet();
 		$this->ctrlComment = new controllerComment();
 		$this->ctrlUser = new controllerUser();
+		$this->ctrlMenu = new controllerMenu();
 	}
 
 	public function routerReq()
@@ -93,6 +96,16 @@ class router
 				{
 					$idCom = $this->getParams($_GET, 'id');
 					$this->ctrlComment->deleteComment($idCom);
+				}
+
+				else if ($_GET['action'] == 'apropos')
+				{
+					$this->ctrlMenu->aPropos();
+				}
+
+				else if ($_GET['action'] == 'contact')
+				{
+					$this->ctrlMenu->contact();
 				}
 
 			}

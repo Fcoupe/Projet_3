@@ -24,8 +24,8 @@
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
 						<li class="hidden"><a href="index.php"></a></li>
-						<li><a href="#">À Propos</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="index.php?action=apropos">À Propos</a></li>
+						<li><a href="index.php?action=contact">Contact</a></li>
 					</ul>
 				</div>
 			</div>	

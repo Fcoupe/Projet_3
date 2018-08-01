@@ -20,7 +20,7 @@ h1 {
 #container {
     min-height: 100%;  /* Voir commentaire sur html et body plus haut */
     background: #666;
-    width: 70%;
+    width: 90%;
     margin: auto;    /* Permet de centrer la div */
     text-align: justify;
     padding: 5px 20px;
@@ -47,8 +47,7 @@ h1 {
 }
 
 #menu {
-    background: #000;
-    width: 100%;
+    width: 90%;
 }
 
 .inline-form input {
