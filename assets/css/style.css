@@ -2,9 +2,9 @@ html, body {
     height: 100%;
 }
 
-body, header {
+body {
     color: #bfbfbf;
-    background: #666;
+    background: #567356;
     font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
 }
 
@@ -18,12 +18,13 @@ img {
 
 .titreBillet {
     margin-bottom : 0px;
+    color: #000;
 }
 
 
 #container {
     min-height: 100%;  /* Voir commentaire sur html et body plus haut */
-    background: #666;
+    background: #ABD9A9;
     width: 100%;
     margin: auto;    /* Permet de centrer la div */
     text-align: justify;
@@ -34,8 +35,13 @@ img {
     margin-bottom : 30px;
 }
 
-#titreBlog, #piedBlog {
+#titreBlog, #footer {
     text-align: center;
+}
+
+#footer {
+    text-align: center;
+    background: #ABD9A9;
 }
 
 #titreReponses {
@@ -66,4 +72,9 @@ img {
 
 #myCarousel {
     margin-top: 20px;
+}
+
+#latestPost {
+    border-left: solid 2px black;
+    min-height: 200px;
 }

@@ -3,8 +3,9 @@
 <head>
 	<meta charset="utf-8" />
 	<link rel="stylesheet"  href="assets/css/style.css">
-	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css//bootstrap.css">
-	<link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+	
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 	<title><?= $title ?></title> <!-- Element spécifique au titre ! -->
 </head>
 <body>
@@ -35,17 +36,19 @@
 
 		<!-- Fin Navigation -->
 
-	</header>
+	
 	<br /><br />
 	
-<div id="container">
 
-	<header>
+
+	
 	<!-- Corps de page -->
-	<div id="contenu">
-				<?= $content ?> <!-- Variable renvoyant le contenu -->
+	<div id="container" class="col-lg-9">
+				<?= $content ?> <!-- Variable renvoyant le contenu -->	
 	</div>
-	<footer id="piedBlog">
+
+	
+	<footer id="footer">
 				Blog Réaliser avec une architecture MVC.
 	</footer>
 </div></body>

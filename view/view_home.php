@@ -32,30 +32,30 @@
 	<script src="assets/js/jquery.js"></script>
 	<script src="assets/js/bootstrap.js"></script>
 
-<?php foreach ($billets as $billet): ?>
-	<article>
-		<header>
-			<a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>">
-			<h1 class="titreBillet"><?= $billet['title'] ?></h1>
-			</a>
-			<time><?= $billet['date_t'] ?></time>
-			
-		</header>
-		<p><?= $billet['content'] ?></p>	
-	</article>
-	
-	<hr />
-<?php endforeach; ?>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 col-md-12 col-lg-12">
+			<?php foreach ($billets as $billet): ?>
+				<article class="col-sm-9 col-md-9 col-lg-9">
+					<header>
+						<br />
+						<a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>">
+						<h1 class="titreBillet"><?= $billet['title'] ?></h1>
+						</a>
+						<time><?= $billet['date_t'] ?></time>
+						
+					</header>
+					<p><?= $billet['content'] ?></p>	
+				</article>
 
-<article>
-		<form method="post" action="index.php?action=addBil">
-    <input id="auteur" name="author" type="text" placeholder="Votre pseudo" 
-           required /><br />
-    <textarea id="txtBillet" name="content" rows="4" 
-              placeholder="Votre commentaire" required></textarea><br />
-    
-    <input type="submit" value="Valider" />
+			<?php endforeach; ?>
 
-
-</form>
-</article>
+			<div id="latestPost" class=" col-sm-3 col-md-3 col-lg-3">
+				<ul>
+					<li><a href="index.php?action=billet&id=1">Billet simple pour l'Alaska</a></li>
+					<li>Chap.1 Achete ton billet</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
