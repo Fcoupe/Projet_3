@@ -2,15 +2,19 @@ html, body {
     height: 100%;
 }
 
-body {
+body, header {
     color: #bfbfbf;
-    background: #000;
+    background: #666;
     font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
 }
 
 h1 {
     color: white;
 }
+
+img {
+        width: 100%;
+      }
 
 .titreBillet {
     margin-bottom : 0px;
@@ -20,7 +24,7 @@ h1 {
 #container {
     min-height: 100%;  /* Voir commentaire sur html et body plus haut */
     background: #666;
-    width: 90%;
+    width: 100%;
     margin: auto;    /* Permet de centrer la div */
     text-align: justify;
     padding: 5px 20px;
@@ -58,4 +62,8 @@ h1 {
 
 .navbar {
     width: 100%;
+}
+
+#myCarousel {
+    margin-top: 20px;
 }

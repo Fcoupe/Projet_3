@@ -4,11 +4,11 @@
 	<meta charset="utf-8" />
 	<link rel="stylesheet"  href="assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css//bootstrap.css">
+	<link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
 	<title><?= $title ?></title> <!-- Element spécifique au titre ! -->
 </head>
 <body>
-<div id="container">		
-	<header>
+
 
 		<!-- Navigation -->
 		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -33,9 +33,15 @@
 		<script src="assets/js/jquery.js"></script>
 		<script src="assets/js/bootstrap.js"></script>
 
+		<!-- Fin Navigation -->
+
 	</header>
 	<br /><br />
+	
+<div id="container">
 
+	<header>
+	<!-- Corps de page -->
 	<div id="contenu">
 				<?= $content ?> <!-- Variable renvoyant le contenu -->
 	</div>
