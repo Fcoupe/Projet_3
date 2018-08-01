@@ -7,38 +7,40 @@
 	<title><?= $title ?></title> <!-- Element spécifique au titre ! -->
 </head>
 <body>
-	<div id="container">
+<div id="container">		
+	<header>
 
-		<nav class="navbar navbar-Inverse">
-			<div class="container-fluid">
-				<div id="menu" class="row col-lg-12">
-					<ul class="nav navbar-nav">
-						<li  class="active"> <a href="index.php">Acceuil</a></li>
-						<li > <a href="#">A propos</a></li>
-						<li > <a href="#">Contact</a></li>
-					</ul>
-				
-					<form class="navbar-form navbar-right inline-form">
-						<div class="form-group">
-							<input type="search" class="input-sm form-control" placeholder="Recherche">
-							<button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
-						</div>
-					</form>
+		<!-- Navigation -->
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div id="menu" class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.php">Accueil</a>					
 				</div>
-			</div>
-		</nav>
-		<div id="row">
-			<header>
-				<a class="col-lg-12" href="index.php"><h1 id="titreBlog">Mon Blog</h1></a>
-				<p>Je vous souhaite la bienvenue sur ce modeste blog.</p>
-			</header>
-			<div id="contenu">
-				<?= $content ?> <!-- Variable renvoyant le contenu -->
-			</div>
-			<footer id="piedBlog">
-				Blog Réaliser avec une architecture MVC.
-			</footer>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="hidden"><a href="index.php"></a></li>
+						<li><a href="#">À Propos</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+			</div>	
 		</div>
-	</div>  <!-- Fermeture de la div global -->
-</body>
+		<script src="assets/js/jquery.js"></script>
+		<script src="assets/js/bootstrap.js"></script>
+
+	</header>
+	<br /><br />
+
+	<div id="contenu">
+				<?= $content ?> <!-- Variable renvoyant le contenu -->
+	</div>
+	<footer id="piedBlog">
+				Blog Réaliser avec une architecture MVC.
+	</footer>
+</div></body>
 </html>
