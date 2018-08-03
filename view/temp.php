@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link rel="stylesheet"  href="assets/css/style.css">
 	
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -43,7 +44,7 @@
 
 	
 	<!-- Corps de page -->
-	<div id="container" class="col-lg-9">
+	<div id="container">
 				<?= $content ?> <!-- Variable renvoyant le contenu -->	
 	</div>
 

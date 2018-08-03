@@ -16,6 +16,10 @@ img {
         width: 100%;
       }
 
+.listRight {
+    width: 100%;
+}
+
 .titreBillet {
     margin-bottom : 0px;
     color: #000;

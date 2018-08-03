@@ -20,7 +20,7 @@
 		<p><?= $comment['author'] ?> dit :</p>
 		<p><?= $comment['content'] ?></p>
 		
-		<a href="<?= "index.php?action=updateComView&id=" . $comment['id']?>">Modifier Commentaire !</a>
+		
 		
 	<?php endforeach; ?>
 

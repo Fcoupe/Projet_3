@@ -34,7 +34,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-12 col-md-12 col-lg-12">
+		<div id="container" class="col-sm-12 col-md-12 col-lg-12">
 			<?php foreach ($billets as $billet): ?>
 				<article class="col-sm-9 col-md-9 col-lg-9">
 					<header>
@@ -50,8 +50,8 @@
 
 			<?php endforeach; ?>
 
-			<div id="latestPost" class=" col-sm-3 col-md-3 col-lg-3">
-				<ul>
+			<div id="latestPost" class="col-sm-3 col-md-3 col-lg-3">
+				<ul id="listRight">
 					<li><a href="index.php?action=billet&id=1">Billet simple pour l'Alaska</a></li>
 					<li>Chap.1 Achete ton billet</li>
 				</ul>
