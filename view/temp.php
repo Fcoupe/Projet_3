@@ -50,7 +50,10 @@
 
 	
 	<footer id="footer">
-				Blog Réaliser avec une architecture MVC.
+		<div>
+			<p>Blog de présentation du nouveau livre de Mr.ForterocheJean </p><br/>
+			<p><a href="index.php?action=passView">Administration</a></p>
+		</div>
 	</footer>
 </div></body>
 </html>

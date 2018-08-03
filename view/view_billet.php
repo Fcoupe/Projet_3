@@ -3,22 +3,30 @@
 
 	<article>
 		<header>
-			<h1 class="titreBillet"><?= $billet['title'] ?></h1>
+			<h1 class="titreBillet"><?= htmlspecialchars($billet['title']) ?></h1>
 			<a href="<?= "index.php?action=updateView&id=" .  $billet['id'] ?>">Modifier</a>
 			<a href="<?= "index.php?action=delete&id=" . $billet['id'] ?>">Supprimer le Billet !</a>
-			<time><?= $billet['date_t'] ?></time>
+			<time><?= htmlspecialchars($billet['date_t']) ?></time>
+			<div>
+				<br />
+				<img class="img-thumbnail" src="<?= htmlspecialchars($billet['img']) ?>">
+			</div>
 		</header>
-		<p><?= $billet['content'] ?></p>
+		<div class="col-lg-12">
+			<div class="col-lg-offset-1 col-lg-10">
+				<p><br /><?= htmlspecialchars($billet['content']) ?></p>
+			</div>
+		</div>
 	</article>
 	<hr />
 	<header>
 		<h1 id="titreReponses">Réponse à <?= $billet['title'] ?></h1>
 	</header>
 	<?php foreach ($comments as $comment): ?>
-		<a href="<?= "index.php?action=deleteComment&id=" . $comment['id']?>">Supprimer le commentaires</a>
+		<a href="<?= "index.php?action=deleteComment&id=" . htmlspecialchars($comment['id'])?>">Supprimer le commentaires</a>
 
-		<p><?= $comment['author'] ?> dit :</p>
-		<p><?= $comment['content'] ?></p>
+		<p><?= htmlspecialchars($comment['author']) ?> dit :</p>
+		<p><?= htmlspecialchars($comment['content']) ?></p>
 		
 		
 		

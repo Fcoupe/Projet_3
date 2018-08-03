@@ -14,4 +14,10 @@ class controllerMenu
 		$view = new view("contact");
 		$view->generate(array());
 	}
+
+	public function administrator()
+	{
+		$view = new view("pass");
+		$view->generate(array());
+	}
 }

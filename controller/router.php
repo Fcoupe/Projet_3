@@ -108,6 +108,11 @@ class router
 					$this->ctrlMenu->contact();
 				}
 
+				else if ($_GET['action'] == 'passView')
+				{
+					$this->ctrlMenu->administrator();
+				}
+
 			}
 
 			else // si aucune action definit alors affichage de l'accueil
