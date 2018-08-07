@@ -13,7 +13,7 @@
 
 
 		<!-- Navigation -->
-		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<!--	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<div id="menu" class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -31,7 +31,7 @@
 					</ul>
 				</div>
 			</div>	
-		</div>
+		</div>-->
 		<script src="assets/js/jquery.js"></script>
 		<script src="assets/js/bootstrap.js"></script>
 

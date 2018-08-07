@@ -2,5 +2,5 @@
 
 <br /><br />
 <article>
-	<p>Futur page de contact création et instaciation pour le moment seulement !!</p>
+	<p>Futur page de contact création et instanciation pour le moment seulement !!</p>
 </article>
