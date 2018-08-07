@@ -10,12 +10,8 @@ class controllerUser
 	private $user;
 	private $billet;
 	private $comments;
-	private $_pass;
 
-	public function pass()
-	{
-		return $this->pass;
-	}
+	
 
 	public function __construct()
 	{
@@ -28,9 +24,12 @@ class controllerUser
 	{
 		$pass = $this->user->getPass();
 
-		if (isset($_POST['passPost']) AND $_POST['passPost'] == '$pass')
+		if (isset($_POST['passPost']) AND $_POST['passPost'] == $pass)
 		{
+			session_start();
+			$_SESSION['pass'] = $pass['pass'];
 			header('Location:index.php?action=adminPanel');
+			echo "Vous etes connecter !";
 		}
 
 		else 

@@ -6,7 +6,9 @@ class Billet extends Model
 {
 	public function getBillets()
 	{// Renvoie la liste de tous les billets, tier par ID décroisant
-	    $sql = 'SELECT BIL_ID as id, BIL_DATE as date_t,' . ' BIL_TITRE AS title, BIL_CONTENU AS content, BIL_IMG as img' . ' from T_BILLET order by BIL_ID desc LIMIT 0, 3';
+	    $sql = 'SELECT BIL_ID as id, BIL_DATE as date_t,'
+	     . ' BIL_TITRE AS title, BIL_CONTENU AS content, BIL_IMG as img'
+	     . ' from T_BILLET order by BIL_ID desc LIMIT 0, 3';
 	    $billets = $this->executeReq($sql);
 	    return $billets;
 	}
@@ -14,7 +16,9 @@ class Billet extends Model
 	public function getBillet($idBillet)
 	{// Renvoie les informations sur un billet
 		
-		$sql = 'SELECT BIL_ID as id,  BIL_DATE as date_t,' . ' BIL_TITRE as title, BIL_CONTENU as content, BIL_IMG as img' . ' from T_BILLET WHERE BIL_ID = ?';
+		$sql = 'SELECT BIL_ID as id,  BIL_DATE as date_t,' 
+		. ' BIL_TITRE as title, BIL_CONTENU as content, BIL_IMG as img' 
+		. ' from T_BILLET WHERE BIL_ID = ?';
 		$billet = $this->executeReq($sql, array($idBillet));
 
 		if ($billet->rowCount() == 1)

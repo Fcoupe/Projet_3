@@ -47,8 +47,8 @@ class router
 				else if($_GET['action'] == 'securityTest')
 				{
 					
-					$passPost = $this->getParams($_POST, 'pass');
-					$this->ctrlUser->securityTest($passPost);
+					$passPost = $this->getParams($_POST, 'passPost');
+					$this->ctrlUser->securityTest();
 				}
 
 				else if ($_GET['action'] == 'addComments')
