@@ -1,13 +1,17 @@
 <?php
 
-require_once ('Model/model.php');
+require_once ('model.php');
 
-class user extends model
+class User extends model
 {
-	public function getPass($pass)
+
+	public function getPass()
 	{
-		$sql = 'SELECT USER_PASS as userPass' . 'from T_USER WHERE USER_PASS = ?';
-		$pass = $this->executeReq($sql, array($pass));
+		$sql = 'SELECT USER_PASS as pass' . ' FROM t_user WHERE USER_ID = "1"';
+		$pass = $this->executeReq($sql);
+
 		return $pass;
+
+		echo $pass;
 	}
 }

@@ -44,6 +44,13 @@ class router
               		}
 				}
 
+				else if($_GET['action'] == 'securityTest')
+				{
+					
+					$passPost = $this->getParams($_POST, 'pass');
+					$this->ctrlUser->securityTest($passPost);
+				}
+
 				else if ($_GET['action'] == 'addComments')
 				{
 	            	$author = $this->getParams($_POST, 'author');
@@ -111,6 +118,11 @@ class router
 				else if ($_GET['action'] == 'passView')
 				{
 					$this->ctrlMenu->administrator();
+				}
+
+				else if ($_GET['action'] == 'adminPanel')
+				{
+					$this->ctrlUser->adminPanel();
 				}
 
 			}
