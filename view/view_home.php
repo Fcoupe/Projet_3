@@ -34,6 +34,10 @@
 
 <div class="container">
 	<div class="row">
+		<form method="post" action="index.php?action=addPassword">
+			<input type="password" name="password">
+			<input type="submit" values="Valider">
+		</form>
 		<div id="container" class="col-sm-12 col-md-12 col-lg-12">
 				<?php foreach ($billets as $billet): ?>
 					<article  class="col-sm-9 col-md-9 col-lg-9">

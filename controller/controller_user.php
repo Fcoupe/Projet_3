@@ -20,21 +20,33 @@ class controllerUser
 		$this->user = new User();
 	}
 
-	public function securityTest()
+	public function securityTest($passPost)
 	{
 		$pass = $this->user->getPass();
+		$verify = password_verify($passPost, $pass);
 
-		if (isset($_POST['passPost']) AND $_POST['passPost'] == $pass)
+		if (!$pass)
 		{
-			session_start();
-			$_SESSION['pass'] = $pass['pass'];
-			header('Location:index.php?action=adminPanel');
-			echo "Vous etes connecter !";
+			echo "Mauvais mot de passe !";
 		}
 
 		else 
 		{
-			echo "Mot de passe invalide";
+			if ($verify) {
+			// session_start();
+			// $_SESSION['pass'] = $pass['pass'];
+			header('Location:index.php?action=adminPanel');
+			echo "Vous etes connecter !";
+			}
+
+			else
+			{
+				$var =  $pass;
+			$var1 = $passPost;
+			echo "Mot de passe invalide _ ";
+			echo $var . ' _ ';
+			echo $var1;
+			}
 		}
 	}
 
@@ -43,6 +55,11 @@ class controllerUser
 		$billets = $this->billet->getBillets();
 		$view = new view("adminPanel");
 		$view->generate(array('billets' => $billets));
+	}
+
+	public function addPassword($password)
+	{
+		$this->user->addPass($password);
 	}
 
 	

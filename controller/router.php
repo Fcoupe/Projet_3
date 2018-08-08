@@ -47,8 +47,9 @@ class router
 				else if($_GET['action'] == 'securityTest')
 				{
 					
-					$passPost = $this->getParams($_POST, 'passPost');
-					$this->ctrlUser->securityTest();
+					
+					$passPost = password_hash($_POST['passPost'], PASSWORD_DEFAULT);
+					$this->ctrlUser->securityTest($passPost);
 				}
 
 				else if ($_GET['action'] == 'addComments')
@@ -64,6 +65,14 @@ class router
 					$author = $this->getParams($_POST, 'author');
 					$content = $this->getParams($_POST, 'content');
 					$this->ctrlBillet->addBil($author, $content);
+				}
+
+				else if ($_GET['action'] == 'addPassword')
+				{
+					
+					
+					$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+					$this->ctrlUser->addPassword($password);
 				}
 
 				else if ($_GET['action'] == 'updateView')
