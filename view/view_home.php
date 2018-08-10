@@ -53,7 +53,7 @@
 							</div>
 						</header>
 
-						<p><br /><?= htmlspecialchars($billet['content']) ?></p>
+						<p><br /><?= $billet['content'] ?></p>
 						<hr />
 					</article>
 

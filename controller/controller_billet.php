@@ -25,9 +25,10 @@ class controllerBillet
 
 	
 
-	public function addBil ($author, $content)
+	public function addBil ($title, $content)
 	{
-		$this->billet->addBillet($author, $content);
+		$this->billet->addBillet($title, $content);
+		header('Location: index.php?action=passView');
 		
 	}
 
@@ -47,6 +48,7 @@ class controllerBillet
 	public function delete($idBillet)
 	{
 		$this->billet->deleteBills($idBillet);
+		header('Location: index.php?action=passView');
 	}
 
 }

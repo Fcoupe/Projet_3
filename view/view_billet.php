@@ -13,7 +13,7 @@
 		</header>
 		<div class="col-lg-12">
 			<div class="col-lg-offset-1 col-lg-10">
-				<p><br /><?= htmlspecialchars($billet['content']) ?></p>
+				<p><br /><?= $billet['content'] ?></p>
 			</div>
 		</div>
 	</article>
@@ -36,7 +36,7 @@
 
     	<input id="auteur" name="author" type="text" placeholder="Votre pseudo" required /><br />
 
-    	<textarea id="txtcommentaire" name="content" rows="3" col="10" 
+    	<textarea id="txtcommentaire" name="content" rows="3" 
               placeholder="Votre commentaire" required></textarea><br />
     	<input type="hidden" name="id" value="<?= $billet['id'] ?>" />
     	<input type="submit" value="Valider" />

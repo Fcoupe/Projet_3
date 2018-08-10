@@ -48,7 +48,7 @@ class router
 				{
 					
 					
-					$passPost = password_hash($_POST['passPost'], PASSWORD_DEFAULT);
+					$passPost = $this->getParams($_POST, 'passPost');
 					$this->ctrlUser->securityTest($passPost);
 				}
 
@@ -62,16 +62,16 @@ class router
 
 				else if ($_GET['action'] == 'addBil')
 				{
-					$author = $this->getParams($_POST, 'author');
+					$title = $this->getParams($_POST, 'title');
 					$content = $this->getParams($_POST, 'content');
-					$this->ctrlBillet->addBil($author, $content);
+					$this->ctrlBillet->addBil($title, $content);
 				}
 
 				else if ($_GET['action'] == 'addPassword')
 				{
 					
 					
-					$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+					$password = $this->getParams($_POST, 'pass');
 					$this->ctrlUser->addPassword($password);
 				}
 
@@ -132,6 +132,11 @@ class router
 				else if ($_GET['action'] == 'adminPanel')
 				{
 					$this->ctrlUser->adminPanel();
+				}
+
+				else if ($_GET['action'] == 'view_addBillet')
+				{
+					$this->ctrlUser->view_addBillet();
 				}
 
 			}

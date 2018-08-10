@@ -20,7 +20,7 @@ img {
     width: 100%;
 }
 
-.titreBillet {
+.title {
     margin-bottom : 0px;
     color: #000;
 }
@@ -62,6 +62,10 @@ img {
 
 #menu {
     width: 90%;
+}
+
+#texte {
+    width: 100%;
 }
 
 .inline-form input {
