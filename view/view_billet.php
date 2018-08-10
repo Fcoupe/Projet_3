@@ -22,7 +22,7 @@
 		<h1 id="titreReponses">Réponse à <?= $billet['title'] ?></h1>
 	</header>
 	<?php foreach ($comments as $comment): ?>
-		<a href="<?= "index.php?action=deleteComment&id=" . htmlspecialchars($comment['id'])?>">Supprimer le commentaires</a>
+		<a href="<?= "index.php?action=deleteComment&id=" . htmlspecialchars($comment['id'])?>">Supprimer le commentaires<input type="hidden" name="id" value="<?= $billet['id'] ?>"></a>
 
 		<p><?= htmlspecialchars($comment['author']) ?> dit :</p>
 		<p><?= htmlspecialchars($comment['content']) ?></p>

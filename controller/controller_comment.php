@@ -25,6 +25,6 @@ class controllerComment
 	public function deleteComment($idCom)
 	{
 		$this->comments->deleteCom($idCom);
-		header('Location: index.php?action=billet&id=' . $_GET["id"]);
+		header('Location: index.php?action=billet&id=' . $billet["id"]);
 	}
 }
