@@ -16,6 +16,7 @@ class controllerComment
 	public function addComments ($author, $content, $idBillet)
 	{
 		$this->comments->addComment($author, $content, $idBillet);
+		header('Location: index.php?action=billet&id=' . $_POST["id"]);
 		
 	}
 
@@ -24,6 +25,6 @@ class controllerComment
 	public function deleteComment($idCom)
 	{
 		$this->comments->deleteCom($idCom);
-		header('Location: index.php');
+		header('Location: index.php?action=billet&id=' . $_GET["id"]);
 	}
 }

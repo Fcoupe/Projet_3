@@ -34,7 +34,8 @@
 	<form method="post" action="index.php?action=addComments">
 
     	<input id="auteur" name="author" type="text" placeholder="Votre pseudo" required /><br />
-    	<textarea id="txtCommentaire" name="content" rows="5" 
+
+    	<textarea id="txtcommentaire" name="content" rows="3" col="10" 
               placeholder="Votre commentaire" required></textarea><br />
     	<input type="hidden" name="id" value="<?= $billet['id'] ?>" />
     	<input type="submit" value="Valider" />
