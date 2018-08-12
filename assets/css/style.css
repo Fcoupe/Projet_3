@@ -9,26 +9,38 @@ body {
 }
 
 h1 {
-    color: white;
+    color: black;
 }
 
 img {
         width: 100%;
       }
 
+.hr {
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+
+
 .listRight {
     width: 100%;
 }
 
-.title {
-    margin-bottom : 0px;
-    color: #000;
+.title{
+    margin-bottom: 5px;
+    color: black;
+}
+
+.title:hover {
+    margin-bottom : 5px;
+    color: #50dd5b;
 }
 
 
 #container {
     min-height: 100%;  /* Voir commentaire sur html et body plus haut */
-    background: #ABD9A9;
+    background: #f6fff6;
     width: 100%;
     margin: auto;    /* Permet de centrer la div */
     text-align: justify;
@@ -45,7 +57,7 @@ img {
 
 #footer {
     text-align: center;
-    background: #ABD9A9;
+    background: #f6fff6;
 }
 
 #titreReponses {

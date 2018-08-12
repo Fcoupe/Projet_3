@@ -44,7 +44,7 @@
 						<header">
 							<br />
 							<a href="<?= "index.php?action=billet&id=" . htmlspecialchars($billet['id']) ?>">
-							<h1 class="titreBillet"><?= htmlspecialchars($billet['title']) ?></h1>
+							<h1 class="title"><?= htmlspecialchars($billet['title']) ?></h1>
 							</a>
 							<time><?= htmlspecialchars($billet['date_t']) ?></time>
 							<div>
@@ -54,7 +54,7 @@
 						</header>
 
 						<p><br /><?= $billet['content'] ?></p>
-						<hr />
+						<hr class="hr"/>
 					</article>
 
 				<?php endforeach; ?>

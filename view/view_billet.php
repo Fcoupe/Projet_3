@@ -17,7 +17,7 @@
 			</div>
 		</div>
 	</article>
-	<hr />
+	<hr class="hr" />
 	<header>
 		<h1 id="titreReponses">Réponse à <?= $billet['title'] ?></h1>
 	</header>
