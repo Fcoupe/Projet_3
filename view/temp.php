@@ -103,8 +103,8 @@
 	
 	<footer id="footer">
 		<div>
-			<p>Blog de présentation du nouveau livre de Mr.ForterocheJean </p><br/>
-			<a href="index.php?action=passView">Administration</a>
+			<a class="btn btn-info btn-sm" href="index.php?action=passView">Administration</a>
+			<br />
 		</div>
 	</footer>
 </div></body>
