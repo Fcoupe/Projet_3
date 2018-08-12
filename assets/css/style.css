@@ -21,7 +21,13 @@ img {
     border-bottom: 1px solid black;
 }
 
+a {
+    color: black;
+}
 
+a:hover {
+    color:green;
+}
 
 .listRight {
     width: 100%;

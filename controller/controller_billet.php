@@ -42,6 +42,7 @@ class controllerBillet
 	public function updateBil($title, $content, $idBillet)
 	{
 		$this->billet->updateBills($title, $content, $idBillet);
+		header('Location: index.php?action=passView');
 
 	}
 
@@ -51,6 +52,13 @@ class controllerBillet
 		header('Location: index.php?action=passView');
 	}
 
+	public function billetAdmin($idBillet)
+	{
+		$billet = $this->billet->getBillet($idBillet);
+		$comments = $this->comments->getComments($idBillet);
+		$view = new view('billetAdmin');
+		$view->generate(array('billet' => $billet, 'comments' => $comments));
+	}
 }
 
 

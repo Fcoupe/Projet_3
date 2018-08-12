@@ -44,6 +44,20 @@ class router
               		}
 				}
 
+				else if($_GET['action'] == 'billetAdmin')
+				{
+					$idBillet = intval($this->getParams($_GET, 'id'));
+
+					if ($idBillet != 0)
+					{
+						$this->ctrlBillet->billetAdmin($idBillet);
+					}
+					else
+              		{
+              			throw new Exception("Identifiant de billet non valide");
+              		}
+				}
+
 				else if($_GET['action'] == 'securityTest')
 				{
 					
