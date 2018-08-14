@@ -25,6 +25,6 @@ class controllerComment
 	public function deleteComment($idCom)
 	{
 		$this->comments->deleteCom($idCom);
-		header('Location: index.php');
+		header('Location: index.php?action=passView');
 	}
 }

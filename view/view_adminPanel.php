@@ -3,10 +3,11 @@
 <div class="container">
 	<div class="row">
 		<div id="container" class="col-sm-12 col-md-12 col-lg-12">
-
+			<br />
+			<a class="btn btn-primary btn-lg" href="index.php?action=view_addBillet">Ajout d'article</a>
 			
 				<?php foreach ($billets as $billet): ?>
-					<article  class="col-sm-9 col-md-9 col-lg-9">
+					<article  class="col-sm-11 col-md-11 col-lg-11">
 						<header>
 							
 							<br />
