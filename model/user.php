@@ -8,7 +8,7 @@ class User extends model
 	public function getPass()
 	{
 		$sql = 'SELECT USER_PASS as pass'
-		. ' FROM T_USER WHERE USER_ID = 7';
+		. ' FROM T_USER WHERE USER_ID = 13';
 		$pass = $this->executeReq($sql);
 		
 		$res = $pass->fetch();

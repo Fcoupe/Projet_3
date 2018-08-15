@@ -22,9 +22,9 @@ class controllerComment
 
 	
 
-	public function deleteComment($idCom)
+	public function deleteComment($idCom, $idBillet)
 	{
 		$this->comments->deleteCom($idCom);
-		header('Location: index.php?action=passView');
+		header('Location: index.php?action=billetAdmin&id=' . $idBillet);
 	}
 }

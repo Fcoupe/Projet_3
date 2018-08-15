@@ -2,7 +2,7 @@
 
 
 <br /> <br />
-<h2>Crée Vos article en y ajoutant du style !</h2>
+<h2>Créez vos articles en y ajoutant du style !</h2>
 <br />
 <form method="post" action="index.php?action=addBil">
 	<input type="text" name="title" id="title" placeholder="Votre Titre ici !" required />

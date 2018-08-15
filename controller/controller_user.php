@@ -23,11 +23,12 @@ class controllerUser
 	public function securityTest($passPost)
 	{
 		$pass = $this->user->getPass();
+		$passPost = hash('sha512', $passPost);
 		
-		if (isset($_POST['passPost']) AND $_POST['passPost'] == $pass)
+		if (isset($passPost) AND isset($pass) AND $passPost == $pass)
 		{
-			// session_start();
-			// $_SESSION['pass'] = $pass['pass'];
+			session_start();
+			$_SESSION['pass'] = $pass['pass'];
 			header('Location:index.php?action=adminPanel');
 			echo "Vous etes connecter !";
 		}
@@ -36,8 +37,8 @@ class controllerUser
 		{
 				$var =  $pass;
 			$var1 = $passPost;
-			echo "Mot de passe invalide _ ";
-			echo $var . ' _ ';
+			echo "Mot de passe invalide _ <br />";
+			echo $var . ' _ <br />';
 			echo $var1;
 		}
 		
@@ -51,8 +52,9 @@ class controllerUser
 	}
 
 	public function addPassword($password)
-	{
+	{	$password = hash('sha512', $_POST['password']);
 		$this->user->addPass($password);
+		header('Location: index.php');
 	}
 
 	public function view_addBillet()

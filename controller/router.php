@@ -85,7 +85,7 @@ class router
 				{
 					
 					
-					$password = $this->getParams($_POST, 'pass');
+					$password = $this->getParams($_POST, 'password');
 					$this->ctrlUser->addPassword($password);
 				}
 
@@ -125,7 +125,8 @@ class router
 				else if ($_GET['action'] == 'deleteComment')
 				{
 					$idCom = $this->getParams($_GET, 'id');
-					$this->ctrlComment->deleteComment($idCom);
+					$idBillet = $this->getParams($_GET, 'idp');
+					$this->ctrlComment->deleteComment($idCom, $idBillet);
 				}
 
 				else if ($_GET['action'] == 'apropos')
