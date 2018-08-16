@@ -28,6 +28,7 @@
 			<span class="glyphicon glyphicon-chevron-right"></span>
 		</a>
 	</div>
+	<!-- Fin du caroussel -->
 
 	<script src="assets/js/jquery.js"></script>
 	<script src="assets/js/bootstrap.js"></script>
@@ -44,7 +45,7 @@
 						<header">
 							<br />
 							<a href="<?= "index.php?action=billet&id=" . htmlspecialchars($billet['id']) ?>">
-							<h1 class="title"><?= htmlspecialchars($billet['title']) ?></h1>
+							<h1 class="title	²"><?= htmlspecialchars($billet['title']) ?></h1>
 							</a>
 							<time><?= htmlspecialchars($billet['date_t']) ?></time>
 							<div>

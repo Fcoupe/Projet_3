@@ -1,6 +1,8 @@
 <?php $this->title = "Mon Blog - " . $billet['title']; ?>
  
-
+ 	<br /><br />
+	<a class="btn btn-success btn-lg" href="index.php?action=adminPanel"><span class="glyphicon glyphicon-home"></span> Retour au menu d'administration</a>
+	<br />
 	<article>
 		<header>
 			<h1 class="titreBillet"><?= htmlspecialchars($billet['title']) ?></h1>

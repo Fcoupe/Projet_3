@@ -27,4 +27,22 @@ class controllerComment
 		$this->comments->deleteCom($idCom);
 		header('Location: index.php?action=billetAdmin&id=' . $idBillet);
 	}
+
+	public function allCom()
+	{
+		$comMax = 10;
+		
+		$this->comments->countCom();
+		var_dump($result);
+		$numberMaxPerPage = ceil($result / $comMax);
+		for ($i = 1 ; $i <= $comMax ; $i++)
+		{
+    		echo '<a href="index.php?action=page=' . $i . '">' . $i . '</a> ';
+		}
+
+
+		$this->comments->allCom();
+		$view = new view('adminCom');
+		$view->generate(array());
+	}
 }

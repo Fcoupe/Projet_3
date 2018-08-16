@@ -69,8 +69,11 @@ class router
 				else if ($_GET['action'] == 'addComments')
 				{
 	            	$author = $this->getParams($_POST, 'author');
+	            	$author = htmlspecialchars($author);
 	            	$content = $this->getParams($_POST, 'content');
+	            	$content = htmlspecialchars($content);
 	            	$idBillet = $this->getParams($_POST, 'id');
+	            	$idBillet = htmlspecialchars($idBillet);
 	            	$this->ctrlComment->addComments($author, $content, $idBillet);
 				}
 
@@ -152,6 +155,11 @@ class router
 				else if ($_GET['action'] == 'view_addBillet')
 				{
 					$this->ctrlUser->view_addBillet();
+				}
+
+				else if($_GET['action'] == 'page')
+				{
+					$this->ctrlComment->allCom();
 				}
 
 			}

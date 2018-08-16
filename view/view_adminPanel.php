@@ -36,5 +36,6 @@ session_start();?>
 				
 		</div>
 		<a class="btn btn-primary btn-lg" href="index.php?action=view_addBillet">Ajout d'article</a>
+		<a class="btn btn-primary btn-lg" href="index.php?action=page"></a>
 	</div>
 </div>

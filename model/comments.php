@@ -32,6 +32,22 @@ class Comments extends Model
 		}
 	}
 
+	public function countCom()
+	{
+		$sql = 'SELECT COUNT(*) As count FROM T_COM';
+		$result = $this->executeReq($sql, array());
+		
+	}
+
+	public function allCom()
+	{
+		$sql = 'SELECT COM_ID as id,  COM_DATE as date_t,' 
+		. ' COM_AUTEUR as author, COM_CONTENU as content from T_COM ';
+		$allCom = $this->executeReq($sql, array());
+		
+		var_dump($result);
+	}
+
 	 public function addComment($author, $content, $idBillet)
 	 { // Ajout un commentaire a la base
 	 	$sql = 'insert into T_COM(COM_DATE, COM_AUTEUR, COM_CONTENU, BIL_ID)' 
