@@ -32,20 +32,19 @@ class Comments extends Model
 		}
 	}
 
-	public function countCom()
+	public function numberCom()
 	{
 		$sql = 'SELECT COUNT(*) as numb FROM T_COM';
 		$numb = $this->executeReq($sql, array());
 		$numbMax = $numb->fetch(intval(''));
-		var_dump($numbMax['numb']);
-		return $numbMax['numb'];
+		return $numbMax;
 
 		
 	}
 
 	public function allCom()
 	{
-		$sql = 'SELECT COM_ID as id,  COM_DATE as date_t, COM_AUTEUR as author, COM_CONTENU as content from T_COM';
+		$sql = 'SELECT COM_ID as id,  COM_DATE as date_t, COM_AUTEUR as author, COM_CONTENU as content from T_COM LIMIT 0, 5';
 		$allComReq = $this->executeReq($sql);
 		$allCom = $allComReq->fetchAll();
 		return $allCom;
