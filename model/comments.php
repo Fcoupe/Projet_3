@@ -34,18 +34,21 @@ class Comments extends Model
 
 	public function countCom()
 	{
-		$sql = 'SELECT COUNT(*) As count FROM T_COM';
-		$result = $this->executeReq($sql, array());
+		$sql = 'SELECT COUNT(*) as numb FROM T_COM';
+		$numb = $this->executeReq($sql, array());
+		$numbMax = $numb->fetch(intval(''));
+		var_dump($numbMax['numb']);
+		return $numbMax['numb'];
+
 		
 	}
 
 	public function allCom()
 	{
-		$sql = 'SELECT COM_ID as id,  COM_DATE as date_t,' 
-		. ' COM_AUTEUR as author, COM_CONTENU as content from T_COM ';
-		$allCom = $this->executeReq($sql, array());
-		
-		var_dump($result);
+		$sql = 'SELECT COM_ID as id,  COM_DATE as date_t, COM_AUTEUR as author, COM_CONTENU as content from T_COM';
+		$allComReq = $this->executeReq($sql);
+		$allCom = $allComReq->fetchAll();
+		return $allCom;
 	}
 
 	 public function addComment($author, $content, $idBillet)

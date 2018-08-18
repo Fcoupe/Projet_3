@@ -30,19 +30,21 @@ class controllerComment
 
 	public function allCom()
 	{
-		$comMax = 10;
+		$comMax = 5;
 		
 		$this->comments->countCom();
-		var_dump($result);
-		$numberMaxPerPage = ceil($result / $comMax);
-		for ($i = 1 ; $i <= $comMax ; $i++)
+		var_dump($numbMax['numb']);
+
+		$numberMaxPerPage = ceil($numbMax / $comMax);
+		for ($i = 1 ; $i <= $numberMaxPerPage ; $i++)
 		{
     		echo '<a href="index.php?action=page=' . $i . '">' . $i . '</a> ';
 		}
 
 
-		$this->comments->allCom();
+		$allCom = $this->comments->allCom();
+		var_dump($allCom);
 		$view = new view('adminCom');
-		$view->generate(array());
+		$view->generate(array('allCom' => $allCom));
 	}
 }
