@@ -11,10 +11,15 @@ class controllerHome
 		$this->billet = new Billet();
 	}
 
-	public function home()
+	public function home($page)
 	{
-		$billets = $this->billet->getBillets();
+		$bilMax = $this->billet->numBil();
+		$bilLimite = 3;
+		$numberPage = ceil(intval($bilMax['numBil']) / $bilLimite);
+		$first = ($page - 1 ) * intval($bilLimite);
+
+		$billets = $this->billet->getBillets(intval($first), intval($bilLimite));
 		$view = new view("home");
-		$view->generate(array('billets' => $billets));
+		$view->generate(array('billets' => $billets, 'bilLimite' => $bilLimite, 'numberPage' => $numberPage));
 	}
 }

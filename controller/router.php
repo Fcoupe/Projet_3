@@ -159,7 +159,33 @@ class router
 
 				else if($_GET['action'] == 'page')
 				{
-					$this->ctrlComment->allCom();
+					if($_GET['action'] == 'page')
+					{
+					$page = $this->getParams($_GET, 'id');
+					$this->ctrlComment->allCom($page);
+					}
+
+					else
+					{
+						$page = 1;
+						$this->ctrlComment->allCom($page);
+					}
+					
+				}
+
+				else if($_GET['action'] == 'home')
+				{
+					if($_GET['action'] == 'home')
+					{
+					$page = $this->getParams($_GET, 'id');
+					$this->ctrlHome->home($page);
+					}
+
+					else
+					{
+						$page = 1;
+						$this->ctrlHome->home($page);
+					}
 				}
 
 			}

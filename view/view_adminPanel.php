@@ -5,7 +5,7 @@ session_start();?>
 		<div id="container" class="col-sm-12 col-md-12 col-lg-12">
 			<br />
 			<a class="btn btn-primary btn-lg" href="index.php?action=view_addBillet">Ajout d'article</a>
-			<?= $_SESSION['pass'] ; ?>
+			<a class="btn btn-warning btn-lg" href="index.php?action=page">Gestion des commentaires</a>
 			
 				<?php foreach ($billets as $billet): ?>
 					<article  class="col-sm-11 col-md-11 col-lg-11">
@@ -36,6 +36,6 @@ session_start();?>
 				
 		</div>
 		<a class="btn btn-primary btn-lg" href="index.php?action=view_addBillet">Ajout d'article</a>
-		<a class="btn btn-primary btn-lg" href="index.php?action=page"></a>
+		<a class="btn btn-warning btn-lg" href="index.php?action=page">Gestion des commentaires</a>
 	</div>
 </div>

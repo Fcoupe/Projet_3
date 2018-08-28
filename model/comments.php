@@ -42,10 +42,10 @@ class Comments extends Model
 		
 	}
 
-	public function allCom()
+	public function allCom($firstText, $comMax)
 	{
-		$sql = 'SELECT COM_ID as id,  COM_DATE as date_t, COM_AUTEUR as author, COM_CONTENU as content from T_COM LIMIT 0, 5';
-		$allComReq = $this->executeReq($sql);
+		$sql = 'SELECT COM_ID as id,  COM_DATE as date_t, COM_AUTEUR as author, COM_CONTENU as content from T_COM ORDER BY id DESC LIMIT ' . intval($firstText) . ',' . intval($comMax);
+		$allComReq = $this->executeReq($sql, array($firstText, $comMax));
 		$allCom = $allComReq->fetchAll();
 		return $allCom;
 	}

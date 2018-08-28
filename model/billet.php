@@ -4,13 +4,22 @@ require_once ('Model/model.php');
 
 class Billet extends Model 
 {
-	public function getBillets()
+	public function getBillets($first, $bilLimite)
 	{// Renvoie la liste de tous les billets, tier par ID décroisant
 	    $sql = 'SELECT BIL_ID as id, BIL_DATE as date_t,'
 	     . ' BIL_TITRE AS title, BIL_CONTENU AS content, BIL_IMG as img'
-	     . ' from T_BILLET order by BIL_ID desc LIMIT 0, 3';
-	    $billets = $this->executeReq($sql);
+	     . ' from T_BILLET ORDER BY id DESC LIMIT ' . intval($first) . ',' . intval($bilLimite);
+	    $billets = $this->executeReq($sql, array($first, $bilLimite
+		));
 	    return $billets;
+	}
+
+	public function numBil()
+	{
+		$sql ='SELECT COUNT(*) as numBil FROM T_BILLET';
+		$numBil = $this->executeReq($sql, array());
+		$bilMax = $numBil->fetch(intval(''));
+		return $bilMax;
 	}
 
 	public function getBillet($idBillet)

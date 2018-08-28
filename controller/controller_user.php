@@ -35,17 +35,13 @@ class controllerUser
 
 		else
 		{
-				$var =  $pass;
-			$var1 = $passPost;
 			echo "Mot de passe invalide _ <br />";
-			echo $var . ' _ <br />';
-			echo $var1;
-		}
-		
+		}	
 	}
 
 	public function adminPanel()
-	{
+	{	
+		$this->ctrlComment->allCom($page);
 		$billets = $this->billet->getBillets();
 		$view = new view("adminPanel");
 		$view->generate(array('billets' => $billets));

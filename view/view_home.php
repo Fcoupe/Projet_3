@@ -69,3 +69,18 @@
 		</div>
 	</div>
 </div>
+<div class="row">
+<footer class="align-center">
+
+<?php
+
+
+
+echo '<h3>Page : ';
+for ($i = 1 ; $i <= $numberPage ; $i++)
+		{
+    		echo '<a class="btn btn-info btn-sm" href="index.php?action=home&id=' . $i . '">' . $i . '</a> ';
+		}
+?></h3>
+</footer>
+</div>

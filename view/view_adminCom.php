@@ -1,6 +1,6 @@
 <?php $this->title = "Admin Comment"; ?> 
 <br /><br />
-<div>
+<div class="row">
 <?php foreach ($allCom as $comment): ?>
 
 	<article  class="col-sm-9 col-md-9 col-lg-9">
@@ -16,14 +16,18 @@
 
 				<?php endforeach; ?>
 </div>
+<div class="row">
+<footer class="align-center">
 
-<footer>
 <?php
-$comMax = 5;
-$numberPage = ceil(intval($numbMax['numb']) / intval($comMax));
+
+
+
+
 for ($i = 1 ; $i <= $numberPage ; $i++)
 		{
-    		echo '<a href="index.php?action=page=' . $i . '">' . $i . '</a> ';
+    		echo '<a class="btn btn-info btn-sm" href="index.php?action=page&id=' . $i . '">' . $i . '</a> ';
 		}
 ?>
 </footer>
+</div>
