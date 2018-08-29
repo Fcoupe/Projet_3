@@ -12,6 +12,10 @@ h1 {
     color: black;
 }
 
+h2 {
+    text-align: center;
+}
+
 img {
         width: 100%;
       }
@@ -103,4 +107,12 @@ a:hover {
 #latestPost {
     border-left: solid 2px black;
     min-height: 200px;
+}
+
+#passView {
+    text-align: center;
+}
+
+#passText {
+    text-align: center;
 }

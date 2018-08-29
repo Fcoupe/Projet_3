@@ -20,7 +20,7 @@ class controllerUser
 		$this->user = new User();
 	}
 
-	public function securityTest($passPost)
+	public function securityTest($passPost, $nickName)
 	{
 		$pass = $this->user->getPass();
 		$passPost = hash('sha512', $passPost);
@@ -28,9 +28,11 @@ class controllerUser
 		if (isset($passPost) AND isset($pass) AND $passPost == $pass)
 		{
 			session_start();
-			$_SESSION['pass'] = $pass['pass'];
-			header('Location:index.php?action=adminPanel');
-			echo "Vous etes connecter !";
+			$_SESSION['nickName'] = $nickName;
+			$_SESSION['pass'] = $pass;
+			var_dump($nickName);
+			header('Location:index.php?action=adminPanel&id=1');
+			
 		}
 
 		else
@@ -39,12 +41,16 @@ class controllerUser
 		}	
 	}
 
-	public function adminPanel()
+	public function adminPanel($page)
 	{	
-		$this->ctrlComment->allCom($page);
-		$billets = $this->billet->getBillets();
+		$bilMax = $this->billet->numBil();
+		$bilLimite = 3;
+		$numberPage = ceil(intval($bilMax['numBil']) / $bilLimite);
+		$first = (intval($page) - 1 ) * intval($bilLimite);
+
+		$billets = $this->billet->getBillets(intval($first), intval($bilLimite));
 		$view = new view("adminPanel");
-		$view->generate(array('billets' => $billets));
+		$view->generate(array('billets' => $billets, 'first' => $first, 'numberPage' => $numberPage));
 	}
 
 	public function addPassword($password)
@@ -57,6 +63,11 @@ class controllerUser
 	{
 		$view = new view('addBillet');
 		$view->generate(array());
+	}
+
+	public function destroy()
+	{
+		header('Location: index.php');
 	}
 
 	

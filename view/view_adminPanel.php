@@ -22,7 +22,7 @@ session_start();?>
 							
 							<div>
 								<br />
-								<img class="img-thumbnail" src="<?= htmlspecialchars($billet['img']) ?>">
+								<img src="<?= htmlspecialchars($billet['img']) ?>">
 							</div>
 							
 						</header>
@@ -30,12 +30,20 @@ session_start();?>
 						<p><br /><?= $billet['content'] ?></p>
 						<hr class="hr" />
 					</article>
-
+				</div>
 				<?php endforeach; ?>
-
 				
-		</div>
+				<?php
+					var_dump($_SESSION);
+					for ($i = 1 ; $i <= $numberPage ; $i++)
+					{
+    					echo '<a class="btn btn-info btn-sm" href="index.php?action=home&id=' . $i . '">' . $i . '</a> ';
+					}
+					echo '<br />';
+					?>
+		<a class="btn btn-danger btn-lg" href="index.php?action=destroy">Déconnexion</a>
 		<a class="btn btn-primary btn-lg" href="index.php?action=view_addBillet">Ajout d'article</a>
-		<a class="btn btn-warning btn-lg" href="index.php?action=page">Gestion des commentaires</a>
+		<a class="btn btn-warning btn-lg" href="index.php?action=page">
+		Gestion des commentaires</a>
 	</div>
 </div>

@@ -50,7 +50,7 @@
 							<time><?= htmlspecialchars($billet['date_t']) ?></time>
 							<div>
 								<br />
-								<img class="img-thumbnail" src="<?= htmlspecialchars($billet['img']) ?>">
+								<img src="<?= htmlspecialchars($billet['img']) ?>">
 							</div>
 						</header>
 
@@ -70,13 +70,12 @@
 	</div>
 </div>
 <div class="row">
-<footer class="align-center">
-
+	<?php session_start();
+	session_destroy();
+	?>
+<footer >
 <?php
 
-
-
-echo '<h3>Page : ';
 for ($i = 1 ; $i <= $numberPage ; $i++)
 		{
     		echo '<a class="btn btn-info btn-sm" href="index.php?action=home&id=' . $i . '">' . $i . '</a> ';

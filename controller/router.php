@@ -63,7 +63,8 @@ class router
 					
 					
 					$passPost = $this->getParams($_POST, 'passPost');
-					$this->ctrlUser->securityTest($passPost);
+					$nickName = $this->getParams($_POST, 'nickName');
+					$this->ctrlUser->securityTest($passPost, $nickName);
 				}
 
 				else if ($_GET['action'] == 'addComments')
@@ -86,14 +87,14 @@ class router
 
 				else if ($_GET['action'] == 'addPassword')
 				{
-					
-					
 					$password = $this->getParams($_POST, 'password');
 					$this->ctrlUser->addPassword($password);
 				}
 
 				else if ($_GET['action'] == 'updateView')
 				{
+					
+					
 					$idBillet = intval($this->getParams($_GET, 'id'));
 
 					if ($idBillet != 0)
@@ -147,9 +148,25 @@ class router
 					$this->ctrlMenu->administrator();
 				}
 
+				else if ($_GET['action'] == 'destroy')
+				{	
+					
+					$this->ctrlUser->destroy();
+				}
+
 				else if ($_GET['action'] == 'adminPanel')
 				{
-					$this->ctrlUser->adminPanel();
+					if($_GET['action'] == 'adminPanel')
+					{
+					$page = $this->getParams($_GET, 'id');
+					$this->ctrlUser->adminPanel($page);
+					}
+
+					else
+					{
+						$page = 1;
+						$this->ctrlUser->adminPanel($page);
+					}
 				}
 
 				else if ($_GET['action'] == 'view_addBillet')
@@ -191,8 +208,8 @@ class router
 			}
 
 			else // si aucune action definit alors affichage de l'accueil
-			{
-				$this->ctrlHome->home();
+			{	$page = 1;
+				$this->ctrlHome->home($page);
 			}
 		}// fin de try
 
