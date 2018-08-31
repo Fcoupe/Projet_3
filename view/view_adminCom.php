@@ -1,4 +1,6 @@
-<?php $this->title = "Admin Comment"; ?> 
+<?php $this->title = "Admin Comment"; 
+session_start();
+?> 
 <br /><br />
 <div class="row">
 <?php foreach ($allCom as $comment): ?>

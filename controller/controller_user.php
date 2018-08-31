@@ -30,7 +30,6 @@ class controllerUser
 			session_start();
 			$_SESSION['nickName'] = $nickName;
 			$_SESSION['pass'] = $pass;
-			var_dump($nickName);
 			header('Location:index.php?action=adminPanel&id=1');
 			
 		}
@@ -67,6 +66,8 @@ class controllerUser
 
 	public function destroy()
 	{
+		session_start();
+		session_destroy();
 		header('Location: index.php');
 	}
 

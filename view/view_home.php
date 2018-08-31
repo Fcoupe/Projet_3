@@ -70,9 +70,7 @@
 	</div>
 </div>
 <div class="row">
-	<?php session_start();
-	session_destroy();
-	?>
+	
 <footer >
 <?php
 
@@ -83,3 +81,4 @@ for ($i = 1 ; $i <= $numberPage ; $i++)
 ?></h3>
 </footer>
 </div>
+

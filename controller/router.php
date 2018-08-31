@@ -80,9 +80,18 @@ class router
 
 				else if ($_GET['action'] == 'addBil')
 				{
+					if(isset($_SESSION['nickName']) AND isset($_SESSION['pass']))
+					{
 					$title = $this->getParams($_POST, 'title');
 					$content = $this->getParams($_POST, 'content');
 					$this->ctrlBillet->addBil($title, $content);
+					}
+
+					else
+					{
+						$this->ctrlUser->administrator();
+					}
+
 				}
 
 				else if ($_GET['action'] == 'addPassword')
@@ -170,7 +179,9 @@ class router
 				}
 
 				else if ($_GET['action'] == 'view_addBillet')
-				{
+
+				{	
+					if(isset($_SESSION['nickName']))
 					$this->ctrlUser->view_addBillet();
 				}
 

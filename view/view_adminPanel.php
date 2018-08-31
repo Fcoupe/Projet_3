@@ -37,7 +37,7 @@ session_start();?>
 					var_dump($_SESSION);
 					for ($i = 1 ; $i <= $numberPage ; $i++)
 					{
-    					echo '<a class="btn btn-info btn-sm" href="index.php?action=home&id=' . $i . '">' . $i . '</a> ';
+    					echo '<a class="btn btn-info btn-sm" href="index.php?action=adminPanel&id=' . $i . '">' . $i . '</a> ';
 					}
 					echo '<br />';
 					?>
