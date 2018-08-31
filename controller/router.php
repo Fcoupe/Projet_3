@@ -181,7 +181,6 @@ class router
 				else if ($_GET['action'] == 'view_addBillet')
 
 				{	
-					if(isset($_SESSION['nickName']))
 					$this->ctrlUser->view_addBillet();
 				}
 
