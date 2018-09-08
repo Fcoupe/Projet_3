@@ -1,4 +1,4 @@
-<?php
+<?php  		// Controlleur des fonctions User
 
 require_once ('model/billet.php');
 require_once ('model/comments.php');
@@ -14,26 +14,24 @@ class controllerUser
 	
 
 	public function __construct()
-	{
+	{		// Instanciation des fonctions
 		$this->billet = new Billet();
 		$this->comments = new Comments();
 		$this->user = new User();
 	}
 
 	public function securityTest($passPost, $nickName)
-	{
+	{		// Test des Mdp reçut et les compare avec la BDD
 		$pass = $this->user->getPass();
 		$passPost = hash('sha512', $passPost);
-		
 		if (isset($passPost) AND isset($pass) AND $passPost == $pass)
 		{
-			session_start();
+			session_start(); 		// Création de la session administrateur
 			$_SESSION['nickName'] = $nickName;
 			$_SESSION['pass'] = $pass;
-			header('Location:index.php?action=adminPanel&id=1');
+			header('Location:index.php?action=adminPanel');
 			
 		}
-
 		else
 		{
 			echo "Mot de passe invalide _ <br />";
@@ -41,7 +39,7 @@ class controllerUser
 	}
 
 	public function adminPanel($page)
-	{	
+	{		// Récupére les données billet, fonction de pagination et création de la vue 
 		$bilMax = $this->billet->numBil();
 		$bilLimite = 3;
 		$numberPage = ceil(intval($bilMax['numBil']) / $bilLimite);
@@ -53,19 +51,20 @@ class controllerUser
 	}
 
 	public function addPassword($password)
-	{	$password = hash('sha512', $_POST['password']);
+	{		// Fonction Bonus ajout de mot de passe (si besoin)
+		$password = hash('sha512', $_POST['password']);
 		$this->user->addPass($password);
 		header('Location: index.php');
 	}
 
 	public function view_addBillet()
-	{
+	{		// Création de la vue d'ajout de Billet
 		$view = new view('addBillet');
 		$view->generate(array());
 	}
 
 	public function destroy()
-	{
+	{		// Destruction de session
 		session_start();
 		session_destroy();
 		header('Location: index.php');
