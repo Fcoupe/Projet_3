@@ -1,4 +1,4 @@
-<?php
+<?php 		// Controlleur des fonction Comments
 
 require_once ('model/comments.php');
 require_once ('view/view.php');
@@ -9,27 +9,25 @@ class controllerComment
 	
 
 	public function __construct()
-	{
+	{ // Instanciation de la fonction Comments
 		$this->comments = new Comments();
 	}
 
 	public function addComments ($author, $content, $idBillet)
-	{
+	{		// Ajout de commentaire en BDD et redirection
 		$this->comments->addComment($author, $content, $idBillet);
 		header('Location: index.php?action=billetAdmin&id=' . $_POST["id"]);
 		
 	}
 
-	
-
 	public function deleteComment($idCom, $idBillet)
-	{
+	{		// Sup^pression de Commentaire et redirection
 		$this->comments->deleteCom($idCom);
 		header('Location: index.php?action=billetAdmin&id=' . $idBillet);
 	}
 
 	public function allCom($page)
-	{
+	{		// Focntion de pagination de l'Admin Comment et création de la vue 
 		$numbMax = $this->comments->numberCom();
 		$comMax = 5;
 		
