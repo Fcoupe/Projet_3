@@ -1,4 +1,4 @@
-<?php
+<?php  		//Connection a la BDD et automatisation des requêtes
 
  abstract class Model {
 
@@ -6,7 +6,7 @@
 
 	
 	protected function executeReq($sql, $params = null)
-	{
+	{ 		// Automatisation des requêtes suivant les paramatres
 		if ($params == null)
 		{
 			$result = $this->getDb()->query($sql); // exécution direct

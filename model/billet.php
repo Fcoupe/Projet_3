@@ -1,4 +1,4 @@
-<?php
+<?php  		// Model des requêtes Billet
 
 require_once ('Model/model.php');
 
@@ -15,7 +15,7 @@ class Billet extends Model
 	}
 
 	public function numBil()
-	{
+	{		// Calcul le nombre de Billet present
 		$sql ='SELECT COUNT(*) as numBil FROM T_BILLET';
 		$numBil = $this->executeReq($sql, array());
 		$bilMax = $numBil->fetch(intval(''));
@@ -42,20 +42,20 @@ class Billet extends Model
 	}
 
 	public function addBillet ($title, $content)
-	{
+	{		// Ajoute un Billet en BDD
 		$sql = 'INSERT INTO T_BILLET(BIL_DATE, BIL_TITRE, BIL_CONTENU)' . 'VALUES(?, ?, ?)';
 		$date = date('Y-m-d H:i:s');
 		$billet = $this->executeReq($sql, array($date, $title, $content));
 	}
 
 	public function updateBills ($title, $content, $idBillet)
-	{
+	{		// Modifie un Billet en BDD
 		$sql = 'UPDATE T_BILLET SET BIL_TITRE = ?, BIL_CONTENU = ? WHERE BIL_ID = ?';
 		$billet = $this->executeReq($sql, array($title, $content, $idBillet));
 	}
 
 	public function deleteBills ($idBillet)
-	{
+	{		// Supprime un Billet en BDD
 		$sql ='DELETE fROM T_BILLET WHERE BIL_ID = ?';
 		$billet = $this->executeReq($sql, array($idBillet));
 	}
