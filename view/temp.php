@@ -6,9 +6,9 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link rel="stylesheet"  href="assets/css/style.css">
 	
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-	<script type="text/javascript" src="assets/tiny_mce/tiny_mce.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"> <!-- CDN bootstrap -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> <!-- CDN bootstrap -->
+	<script type="text/javascript" src="assets/tiny_mce/tiny_mce.js"></script> <!-- tinyMCE -->
 	<script type="text/javascript">
         tinyMCE.init({
             // type de mode
@@ -58,34 +58,32 @@
             ],
             */
         });
-    </script>
+    </script> <!-- Fin tinyMCE -->
 	<title><?= $title ?></title> <!-- Element spécifique au titre ! -->
 </head>
 <body>
-
-
-		<!-- Navigation -->
-		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-			<div id="menu" class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home"></span> Accueil</a>					
-				</div>
-				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav">
-						<li class="hidden"><a href="index.php&id="></a></li>
-						<li><a href="index.php?action=apropos">À Propos</a></li>
-						<li><a href="index.php?action=contact">Contact</a></li>
-					</ul>
-				</div>
-			</div>	
-		</div>
-		<script src="assets/js/jquery.js"></script>
-		<script src="assets/js/bootstrap.js"></script>
+	<!-- Navigation MENU-->
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div id="menu" class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home"></span> Accueil</a>					
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="hidden"><a href="index.php&id="></a></li>
+					<li><a href="index.php?action=apropos">À Propos</a></li>
+					<li><a href="index.php?action=contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>	
+	</div>
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.js"></script>
 
 		<!-- Fin Navigation -->
 
@@ -100,12 +98,14 @@
 				<?= $content ?> <!-- Variable renvoyant le contenu -->	
 	</div>
 
-	
+	<!-- Pied de page -->
 	<footer id="footer">
 		<div>
 			<a class="btn btn-info btn-lg" href="index.php?action=passView">Administration</a>
 			<br />
 		</div>
 	</footer>
-</div></body>
+	<!-- Fin du pied de page -->
+
+</body>
 </html>

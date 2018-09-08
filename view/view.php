@@ -1,4 +1,4 @@
-<?php
+<?php  		// Class de création des vues 
 
 class view 
 {
@@ -6,7 +6,7 @@ class view
 	private $title;// titre de la vue
 
 	public function __construct($action)
-	{
+	{		// Instaciation de la vue 
 		$this->file = "view/view_" . $action . ".php";
 	}// Determination du nom du fichier vue a partir de l'action
 
