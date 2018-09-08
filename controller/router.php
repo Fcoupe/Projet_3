@@ -1,4 +1,4 @@
-<?php
+<?php 		// Rooteur des requêtes
 
 require_once ('controller/controller_home.php');
 require_once ('controller/controller_billet.php');
@@ -16,7 +16,7 @@ class router
 	private $ctrlMenu;
 
 	public function __construct()
-	{
+	{		// Instanciation des fonctions
 		$this->ctrlHome = new controllerHome();
 		$this->ctrlBillet = new controllerBillet();
 		$this->ctrlComment = new controllerComment();
@@ -25,11 +25,11 @@ class router
 	}
 
 	public function routerReq()
-	{
+	{ 		// Récupere les requetes et les renvoies vers leur demande
 		try
 		{
 			if (isset($_GET['action']))
-			{
+			{		// Verification de presence de l'action
 				if ($_GET['action'] == 'billet')
 				{		// Affichage de la vue d'un Billet
 					$idBillet = intval($this->getParams($_GET, 'id'));
@@ -262,20 +262,20 @@ class router
 
 			}
 
-			else // si aucune action definit alors affichage de l'accueil
+			else // Si rien définit alors HomePage
 			{	$page = 1;
 				$this->ctrlHome->home($page);
 			}
 		}// fin de try
 
-		catch (Exception $e)
+		catch (Exception $e)	// Récuperation des Erreur
 		{
 			$this->error($e->getMessage());
 		}
 	}// fin de function
 
 	private function getParams($table, $name)
-	{
+	{		// Récuperation des Parametres en tableau associatif
 		if (isset($table[$name]))
 		{
 			return $table[$name];
@@ -289,7 +289,7 @@ class router
 	}
 
 	private function error($msgError)
-	{
+	{		// Création de la vue Erreur
 		$view = new view('error');
 		$view->generate(array('msgError' => $msgError));
 	}

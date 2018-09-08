@@ -1,4 +1,4 @@
-<?php 		// Controulleur des fonctions Billets
+<?php 		// Controlleur des fonctions Billets
 
 require_once ('model/billet.php');
 require_once ('model/comments.php');
