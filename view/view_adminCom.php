@@ -2,9 +2,10 @@
 session_start();
 ?> 
 <br /><br />
+<a class="btn btn-success btn-lg" href="index.php?action=adminPanel"><span class="glyphicon glyphicon-home"></span> Retour au menu d'administration</a>
 <div class="row">
 <?php foreach ($allCom as $comment): ?>
-
+	
 	<article  class="col-sm-9 col-md-9 col-lg-9">
 		<header>
 			<h3><?= $comment['author'] ?></h3>

@@ -49,7 +49,7 @@ class controllerBillet
 	public function delete($idBillet)
 	{
 		$this->billet->deleteBills($idBillet);
-		header('Location: index.php?action=passView');
+		header('Location: index.php?action=adminPanel');
 	}
 
 	public function billetAdmin($idBillet)

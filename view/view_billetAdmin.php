@@ -1,4 +1,5 @@
-<?php $this->title = "Mon Blog - " . $billet['title']; ?>
+<?php $this->title = "Mon Blog - " . $billet['title'];
+session_start(); ?>
  
  	<br /><br />
 	<a class="btn btn-success btn-lg" href="index.php?action=adminPanel&id=1"><span class="glyphicon glyphicon-home"></span> Retour au menu d'administration</a>

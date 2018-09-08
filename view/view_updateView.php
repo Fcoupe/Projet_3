@@ -1,4 +1,5 @@
-<?php $this->title = "Mon Blog"; ?>
+<?php $this->title = "Mon Blog";
+session_start(); ?>
 
 <br /><br />
 

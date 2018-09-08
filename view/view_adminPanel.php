@@ -1,5 +1,5 @@
 <?php $this->title = "Mon Blog"; 
-session_start();?>
+?>
 <div class="container">
 	<div class="row">
 		<div id="container" class="col-sm-12 col-md-12 col-lg-12">
