@@ -43,7 +43,6 @@ class router
               			throw new Exception("Identifiant de billet non valide");
               		}
 				}
-
 				else if($_GET['action'] == 'billetAdmin')
 				{		// Affichage de la vue d'un billet Vers.Admin
 					session_start();
@@ -60,14 +59,12 @@ class router
 	              		}
               		}
 				}
-
 				else if($_GET['action'] == 'securityTest')
 				{		// Fonction de test Password
 					$passPost = $this->getParams($_POST, 'passPost');
 					$nickName = $this->getParams($_POST, 'nickName');
 					$this->ctrlUser->securityTest($passPost, $nickName);
 				}
-
 				else if ($_GET['action'] == 'addComments')
 				{		// Fonction d'ajout de commentaire 
 	            	$author = $this->getParams($_POST, 'author');
@@ -78,7 +75,6 @@ class router
 	            	$idBillet = htmlspecialchars($idBillet);
 	            	$this->ctrlComment->addComments($author, $content, $idBillet);
 				}
-
 				else if ($_GET['action'] == 'addBil')
 				{		// Fonction d'ajout de Billet
 					session_start();
@@ -94,16 +90,15 @@ class router
 						header('Location: index.php?action=passView');
 					}
 				}
-
 				else if ($_GET['action'] == 'addPassword')
 				{
 					$password = $this->getParams($_POST, 'password');
 					$this->ctrlUser->addPassword($password);
 				}
-
 				else if ($_GET['action'] == 'updateView')
 				{		// Affiche la vue de la modification de Billet
 					session_start();
+
 					if(isset($_SESSION['nickName']))
 					{
 						$idBillet = intval($this->getParams($_GET, 'id'));
@@ -115,7 +110,6 @@ class router
 						else
 	              		{
 	              			throw new Exception("Identifiant de billet non valide");
-	              		
 						}
 					}
 					else
@@ -123,10 +117,10 @@ class router
 						header('Location: index.php?action=passView');
 					}
 				}
-
 				else if ($_GET['action'] == 'updateBil')
 				{		// Fonction de modfication de Billet
 					session_start();
+
 					if(isset($_SESSION['nickName']))
 					{
 						$title = $this->getParams($_POST, 'title');
@@ -134,11 +128,15 @@ class router
 						$idBillet = $this->getParams($_POST, 'id');
 						$this->ctrlBillet->UpdateBil($title, $content, $idBillet);
 					}
+					else
+					{
+						header('Location: index.php?action=passView');
+					}
 				}
-	
 				else if ($_GET['action'] == 'delete')
 				{		// Fonction de suppression de Billet/Article
 					session_start();
+
 					if(isset($_SESSION['nickName']))
 					{
 						$idBillet = $this->getParams($_GET, 'id');
@@ -149,10 +147,10 @@ class router
 						header('Location: index.php?action=passView');
 					}
 				}
-
 				else if ($_GET['action'] == 'deleteComment')
 				{		// Fonction de suppression des coms
 					session_start();
+
 					if (isset($_SESSION['nickName']))
 					{
 						$idCom = $this->getParams($_GET, 'id');
@@ -164,27 +162,23 @@ class router
 						header('Location: index.php?action=passView');
 					}
 				}
-
 				else if ($_GET['action'] == 'apropos')
 				{		//Affiche la pag A propos
 					$this->ctrlMenu->aPropos();
 				}
-
 				else if ($_GET['action'] == 'contact')
 				{		// Affiche la page contact
 					$this->ctrlMenu->contact();
 
 				}
-
 				else if ($_GET['action'] == 'passView')
 				{		// Affiche la vue de connection
-					$this->ctrlMenu->administrator();
-					
+					$this->ctrlMenu->administrator();	
 				}
-
 				else if ($_GET['action'] == 'destroy')
 				{		// Détruit la session
 					session_start();
+
 					if(isset($_SESSION['nickName']))
 					{
 						$this->ctrlUser->destroy();
@@ -194,10 +188,10 @@ class router
 						header('Location: index.php?action=passView');
 					}	
 				}
-
 				else if ($_GET['action'] == 'adminPanel')
 				{		// Affiche la Homepage d'aministration
 					session_start();
+
 					if(isset($_SESSION['nickName']))
 					{
 						if(isset($_GET['id']))
@@ -211,13 +205,11 @@ class router
 						}
 						$this->ctrlUser->adminPanel($page);
 					}
-
 					else 
 					{
 						header('Location: index.php?action=passView');
 					}
 				}
-
 				else if ($_GET['action'] == 'view_addBillet')
 				{		// Affiche la vue de création des billets
 					session_start();
@@ -230,7 +222,6 @@ class router
 						header('Location: index.php?action=passView');
 					}
 				}
-
 				else if($_GET['action'] == 'page')
 				{		// Pagination Gestion des Coms
 					if(isset($_GET['id']))
@@ -245,7 +236,6 @@ class router
 					$this->ctrlComment->allCom($page);
 					
 				}
-
 				else if($_GET['action'] == 'home')
 				{		// Affiche la page d'accueil
 					if(isset($_GET['id']))
@@ -259,35 +249,29 @@ class router
 					}
 					$this->ctrlHome->home($page);
 				}
-
 			}
-
 			else // Si rien définit alors HomePage
 			{	$page = 1;
 				$this->ctrlHome->home($page);
 			}
 		}// fin de try
-
 		catch (Exception $e)	// Récuperation des Erreur
 		{
 			$this->error($e->getMessage());
 		}
 	}// fin de function
-
 	private function getParams($table, $name)
 	{		// Récuperation des Parametres en tableau associatif
 		if (isset($table[$name]))
 		{
 			return $table[$name];
 		}
-
 		else
 		{
 			throw new Exception("Paramètre '$name' absent" );
 			
 		}
 	}
-
 	private function error($msgError)
 	{		// Création de la vue Erreur
 		$view = new view('error');
