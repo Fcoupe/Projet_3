@@ -86,18 +86,11 @@
 	<script src="assets/js/bootstrap.js"></script>
 
 		<!-- Fin Navigation -->
-
-	
 	<br /><br />
-	
-
-
-	
 	<!-- Corps de page -->
 	<div id="container">
 				<?= $content ?> <!-- Variable renvoyant le contenu -->	
 	</div>
-
 	<!-- Pied de page -->
 	<footer id="footer">
 		<div>
@@ -106,6 +99,5 @@
 		</div>
 	</footer>
 	<!-- Fin du pied de page -->
-
 </body>
 </html>

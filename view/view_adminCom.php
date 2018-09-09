@@ -18,11 +18,9 @@ session_start();
 			<p><br /><?= $comment['content'] ?></p>
 			<hr class="hr"/>
 			</article>
-
 	<?php endforeach; ?>
 
 </div>
-
 <div class="row">
 	<footer id="footer">
 	<?php

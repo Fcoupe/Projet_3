@@ -1,8 +1,7 @@
 <?php $this->title = "Mon Blog";
 session_start(); ?>
 
-<br /><br />
-
+<br /><br />		<!-- Vue de la modification de Billet avec tinyMCE -->
 <h1>Modifier vos articles d'ici !!</h1>
 <br />
 <form method="post" action="<?= "index.php?action=updateBil&id=" . $billet['id'] ?>">
