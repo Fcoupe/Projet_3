@@ -1,5 +1,5 @@
 <?php $this->title = "Mon Blog - " . $billet['title'];
-session_start(); ?>
+?>
  
  <br /><br />		<!-- Bouton de retour vers la Homepage d'administration -->
 <a class="btn btn-success btn-lg" href="index.php?action=adminPanel&id=1"><span class="glyphicon glyphicon-home"></span> Retour au menu d'administration</a>
@@ -22,7 +22,7 @@ session_start(); ?>
 </article>
 <hr class="hr" />
 <header>
-	<h1 id="titreReponses">Réponse à <?= $billet['title'] ?></h1>
+	<h2 id="answer">Réponse à <?= $billet['title'] ?></h2>
 </header>
 		<!-- Création de la boucle des commentaires -->
 <?php foreach ($comments as $comment): ?>
@@ -34,7 +34,7 @@ session_start(); ?>
 		<!-- Formulaire d'ajout de commentaires -->
 <form method="post" action="index.php?action=addComments">
     <input id="auteur" name="author" type="text" placeholder="Votre pseudo" required /><br />
-    <textarea id="txtcommentaire" name="content" rows="3" 
+    <textarea id="txtComment" name="content" rows="3" 
               placeholder="Votre commentaire" required></textarea>
               <br />
     <input type="hidden" name="id" value="<?= $billet['id'] ?>" />

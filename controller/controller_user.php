@@ -34,7 +34,8 @@ class controllerUser
 		}
 		else
 		{
-			echo "Mot de passe invalide _ <br />";
+			header('Location: index.php?action=passView');
+			echo "Mot de passe invalide<br />";
 		}	
 	}
 

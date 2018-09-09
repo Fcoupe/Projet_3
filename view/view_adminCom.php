@@ -3,7 +3,6 @@ session_start();
 ?> 
 <br /><br />
 <a class="btn btn-success btn-lg" href="index.php?action=adminPanel"><span class="glyphicon glyphicon-home"></span> Retour au menu d'administration</a> <!-- Bouton de retour au enu d'admin -->
-
 <div class="row">
 
 	<?php foreach ($allCom as $comment): ?>
@@ -23,6 +22,7 @@ session_start();
 </div>
 <div class="row">
 	<footer id="footer">
+
 	<?php
 	for ($i = 1 ; $i <= $numberPage ; $i++)
 		// Création de la boucle de la pagination
@@ -30,5 +30,6 @@ session_start();
     		echo '<a class="btn btn-info btn-sm" href="index.php?action=page&id=' . $i . '">' . $i . '</a> ';
 		}
 	?>
+	
 	</footer>
 </div>

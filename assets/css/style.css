@@ -49,7 +49,7 @@ a:hover {
 
 
 #container {
-    min-height: 100%;  /* Voir commentaire sur html et body plus haut */
+    min-height: 100%;  
     background: #f6fff6;
     width: 100%;
     margin: auto;    /* Permet de centrer la div */
@@ -57,11 +57,9 @@ a:hover {
     padding: 5px 20px;
 }
 
-#contenu {
-    margin-bottom : 30px;
-}
 
-#titreBlog, #footer {
+
+#footer {
     text-align: center;
 }
 
@@ -70,12 +68,12 @@ a:hover {
     background: #f6fff6;
 }
 
-#titreReponses {
-    font-size : 100%;
+#anwser {
+    font-size : 70%;
 }
 
-#txtCommentaire {
-    width: 100%;
+#txtComment {
+    width: 50%;
 }
 
 #txtBillet {
@@ -86,7 +84,7 @@ a:hover {
     width: 90%;
 }
 
-#texte {
+#text {
     width: 100%;
 }
 

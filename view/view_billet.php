@@ -2,7 +2,7 @@
  
 <br /><br />
 		<!-- Bouton de retour vers le Homepage d'aministration -->
-<a class="btn btn-success btn-lg" href="index.php?action=adminPanel"><span class="glyphicon glyphicon-home"></span> Retour au menu d'administration</a>
+<a class="btn btn-success btn-lg" href="index.php"><span class="glyphicon glyphicon-home"></span> Retour a la page d'accueil</a>
 <br />
 <article>
 	<header>
@@ -22,7 +22,7 @@
 </article>
 <hr class="hr" />
 <header>
-	<h1 id="titreReponses">Réponse à <?= $billet['title'] ?></h1>
+	<h2 id="answer">Réponse à <?= $billet['title'] ?></h2>
 </header>
 
 <?php foreach ($comments as $comment): ?>
@@ -32,7 +32,7 @@
 		<!-- Formulaire d'ajout de commentaire -->
 <form method="post" action="index.php?action=addComments">
     <input id="auteur" name="author" type="text" placeholder="Votre pseudo" required /><br />
-    <textarea id="txtcommentaire" name="content" rows="3" 
+    <textarea id="txtComment" name="content" rows="3" 
               placeholder="Votre commentaire" required></textarea>
               <br />
     <input type="hidden" name="id" value="<?= $billet['id'] ?>" />
