@@ -5,11 +5,11 @@ require_once ('model/model.php');
 class User extends model
 {
 
-	public function getPass()
+	public function getPass($nickName)
 	{ 		// Récupere et renvoie un mot de passe 
 		$sql = 'SELECT USER_PASS as pass'
-		. ' FROM T_USER WHERE USER_ID = 13';
-		$pass = $this->executeReq($sql);
+		. ' FROM T_USER WHERE USER_NAME = ?';
+		$pass = $this->executeReq($sql, array($nickName));
 		
 		$res = $pass->fetch();
 		$var = $res['pass'];

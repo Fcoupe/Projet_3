@@ -49,6 +49,7 @@ class controllerBillet
 	public function delete($idBillet)
 	{		// Suppression du Billet et redirection
 		$this->billet->deleteBills($idBillet);
+		$this->comments->delete($idBillet);
 		header('Location: index.php?action=adminPanel');
 	}
 

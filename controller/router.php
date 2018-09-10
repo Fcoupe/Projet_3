@@ -173,7 +173,7 @@ class router
 				}
 				else if ($_GET['action'] == 'passView')
 				{		// Affiche la vue de connection
-					$this->ctrlMenu->administrator();	
+						$this->ctrlMenu->administrator();
 				}
 				else if ($_GET['action'] == 'destroy')
 				{		// Détruit la session

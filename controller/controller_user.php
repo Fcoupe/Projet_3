@@ -11,8 +11,6 @@ class controllerUser
 	private $billet;
 	private $comments;
 
-	
-
 	public function __construct()
 	{		// Instanciation des fonctions
 		$this->billet = new Billet();
@@ -22,8 +20,9 @@ class controllerUser
 
 	public function securityTest($passPost, $nickName)
 	{		// Test des Mdp reçut et les compare avec la BDD
-		$pass = $this->user->getPass();
+		$pass = $this->user->getPass($nickName);
 		$passPost = hash('sha512', $passPost);
+		
 		if (isset($passPost) AND isset($pass) AND $passPost == $pass)
 		{
 			session_start(); 		// Création de la session administrateur

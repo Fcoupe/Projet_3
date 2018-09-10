@@ -1,5 +1,5 @@
 <?php $this->title = "Mon Blog";
-session_start(); ?> 
+?> 
 
 <br /> <br />
 <a class="btn btn-success btn-lg" href="index.php?action=adminPanel"><span class="glyphicon glyphicon-home"></span> Retour au menu d'administration</a> <!-- Bouton retour au menu admin -->

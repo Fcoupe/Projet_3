@@ -66,5 +66,11 @@ class Comments extends Model
 	 	$comments = $this->executeReq($sql, array($idCom));
 	 }
 
+	 public function delete($idBillet)
+	 {
+	 	$sql = 'DELETE FROM T_COM WHERE BIL_ID = ?';
+	 	$comments = $this->executeReq($sql, array($idBillet)); 
+	 }
+
 
 }

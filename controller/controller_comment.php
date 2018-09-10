@@ -7,7 +7,6 @@ class controllerComment
 {
 	private $comments;
 	
-
 	public function __construct()
 	{ // Instanciation de la fonction Comments
 		$this->comments = new Comments();
