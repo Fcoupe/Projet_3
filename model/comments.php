@@ -37,9 +37,7 @@ class Comments extends Model
 		$sql = 'SELECT COUNT(*) as numb FROM T_COM';
 		$numb = $this->executeReq($sql, array());
 		$numbMax = $numb->fetch(intval(''));
-		return $numbMax;
-
-		
+		return $numbMax;	
 	}
 
 	public function allCom($firstText, $comMax)
@@ -58,8 +56,6 @@ class Comments extends Model
 	 $this->executeReq($sql , array($date, $author, $content, $idBillet));
 	 }
 
-	 
-
 	 public function deleteCom ($idCom)
 	 {		// Supprime un commentaire de la BDD 
 	 	$sql = 'DELETE FROM T_COM WHERE COM_ID = ?';
@@ -72,5 +68,17 @@ class Comments extends Model
 	 	$comments = $this->executeReq($sql, array($idBillet)); 
 	 }
 
+	 public function checkReport($idCom)
+	 {
+	 	$sql = 'SELECT REPORT as report FROM T_COM WHERE COM_ID = ?';
+	 	$data = $this->executeReq($sql, array($idCom));
+	 	$check = $data->fetch();
+	 	return $check;
+	 }
 
+	 public function numbReport($idCom)
+	 {
+	 	$sql = 'UPDATE T_COM SET REPORT = REPORT + 1 WHERE COM_ID = ?';
+	 	$report = $this->executeReq($sql, array($idCom));
+	 }
 }

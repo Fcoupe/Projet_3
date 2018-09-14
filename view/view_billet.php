@@ -26,6 +26,7 @@
 </header>
 
 <?php foreach ($comments as $comment): ?>
+	<a class="btn btn-warning" href="<?= "index.php?action=report&id=" .  $comment['id']; ?>">Signaler commentaire</a>
 	<p><?= htmlspecialchars($comment['author']) ?> dit :</p>
 	<p><?= htmlspecialchars($comment['content']) ?></p>	
 <?php endforeach; ?>

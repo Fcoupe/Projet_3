@@ -36,5 +36,11 @@ class controllerComment
 		$view = new view('adminCom');
 		$view->generate(array('allCom' => $allCom, 'numbMax' => $numbMax, 'numberPage' => $numberPage));
 	}
+
+	public function reportCom($idCom)
+	{
+		// $check = $this->comments->numbReport($idCom);
+		// header("Location: ")//A finir 
+	}
 		
 }

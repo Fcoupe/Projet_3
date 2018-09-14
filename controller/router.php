@@ -249,6 +249,11 @@ class router
 					}
 					$this->ctrlHome->home($page);
 				}
+				elseif($_GET['action'] == 'report')
+				{
+					$idCom = $this->getParams($_GET, 'id');
+					$this->ctrlComment->reportCom($idCom);
+				}
 			}
 			else // Si rien définit alors HomePage
 			{	$page = 1;
