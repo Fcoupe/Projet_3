@@ -14,7 +14,7 @@
             // type de mode
             mode : "exact",
             // id ou class, des textareas
-            elements : "texte,texte2",
+            elements : "text,text2",
             // en mode avancé, cela permet de choisir les plugins
             theme : "advanced",
             // liste des plugins

@@ -252,7 +252,8 @@ class router
 				elseif($_GET['action'] == 'report')
 				{
 					$idCom = $this->getParams($_GET, 'id');
-					$this->ctrlComment->reportCom($idCom);
+					$idBillet = $this->getParams($_GET, 'idb');
+					$this->ctrlComment->reportCom($idCom,$idBillet);
 				}
 			}
 			else // Si rien définit alors HomePage

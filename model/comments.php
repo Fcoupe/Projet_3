@@ -50,8 +50,8 @@ class Comments extends Model
 
 	 public function addComment($author, $content, $idBillet)
 	 { // Ajout un commentaire a la BDD
-	 	$sql = 'insert into T_COM(COM_DATE, COM_AUTEUR, COM_CONTENU, BIL_ID)' 
-	 	. ' values(?, ?, ?, ?)';
+	 	$sql = 'insert into T_COM(COM_DATE, COM_AUTEUR, COM_CONTENU, BIL_ID, REPORT)' 
+	 	. ' values(?, ?, ?, ?, 0)';
 	 $date = date('Y-m-d H:i:s'); // recupére la date courante
 	 $this->executeReq($sql , array($date, $author, $content, $idBillet));
 	 }
@@ -66,14 +66,6 @@ class Comments extends Model
 	 {
 	 	$sql = 'DELETE FROM T_COM WHERE BIL_ID = ?';
 	 	$comments = $this->executeReq($sql, array($idBillet)); 
-	 }
-
-	 public function checkReport($idCom)
-	 {
-	 	$sql = 'SELECT REPORT as report FROM T_COM WHERE COM_ID = ?';
-	 	$data = $this->executeReq($sql, array($idCom));
-	 	$check = $data->fetch();
-	 	return $check;
 	 }
 
 	 public function numbReport($idCom)

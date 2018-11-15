@@ -15,12 +15,12 @@ class controllerComment
 	public function addComments ($author, $content, $idBillet)
 	{		// Ajout de commentaire en BDD et redirection
 		$this->comments->addComment($author, $content, $idBillet);
-		header('Location: index.php?action=billetAdmin&id=' . $_POST["id"]);
+		header('Location: index.php?action=billet&id=' . $_POST["id"]);
 		
 	}
 
 	public function deleteComment($idCom, $idBillet)
-	{		// Sup^pression de Commentaire et redirection
+	{		// Suppression de Commentaire et redirection
 		$this->comments->deleteCom($idCom);
 		header('Location: index.php?action=billetAdmin&id=' . $idBillet);
 	}
@@ -37,10 +37,10 @@ class controllerComment
 		$view->generate(array('allCom' => $allCom, 'numbMax' => $numbMax, 'numberPage' => $numberPage));
 	}
 
-	public function reportCom($idCom)
+	public function reportCom($idCom, $idBillet)
 	{
-		// $check = $this->comments->numbReport($idCom);
-		// header("Location: ")//A finir 
+		$check = $this->comments->numbReport($idCom);
+		header('Location: index.php?action=billet&id=' . $idBillet);//A finir 
 	}
 		
 }

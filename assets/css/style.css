@@ -21,7 +21,7 @@ img {
       }
 
 .hr {
-    border: none;
+    
     border-bottom: 1px solid black;
 }
 
@@ -47,6 +47,9 @@ a:hover {
     color: #50dd5b;
 }
 
+.titleBil {
+    text-align: center;
+}
 
 #container {
     min-height: 100%;  
@@ -113,4 +116,22 @@ a:hover {
 
 #passText {
     text-align: center;
+}
+
+#addCom {
+    text-align: center;
+    border : 1px green solid;
+}
+
+#com {
+    text-align: center;
+    border: 1px green solid;
+}
+
+#titleCom {
+    text-align: center;
+    border : 1px green solid;
+    background-color: #CEF19E;
+    padding: 5px;
+    margin-bottom: 10px;
 }

@@ -11,6 +11,7 @@
 <form method="post" action="index.php?action=addBil">
 
 	<input type="text" name="title" id="title" placeholder="Votre Titre ici !" required />
+	
 	<textarea id="text" name="content" rows="30"></textarea>
 	<input type="submit" value="Valider" />
 

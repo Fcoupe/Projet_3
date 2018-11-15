@@ -7,6 +7,7 @@
 			<!-- Bouton dajout et de gestion des articles -->
 			<a class="btn btn-primary btn-lg" href="index.php?action=view_addBillet">Ajout d'article</a>
 			<a class="btn btn-warning btn-lg" href="index.php?action=page">Gestion des commentaires</a>
+			<a class="btn btn-danger btn-lg" href="index.php?action=destroy">Déconnexion</a>
 			<!-- Début de la boucle de création des articles -->
 			<?php foreach ($billets as $billet): ?>
 			<article  class="col-sm-11 col-md-11 col-lg-11">
@@ -39,12 +40,6 @@
 					}
 					echo '<br />';
 					?>
-					<!-- Bouton de déconnexion session -->
-		<a class="btn btn-danger btn-lg" href="index.php?action=destroy">Déconnexion</a>
-					<!-- Bouton d'ajout d'article  -->
-		<a class="btn btn-primary btn-lg" href="index.php?action=view_addBillet">Ajout d'article</a>
-					<!-- Bouton de gestion des commentaires -->
-		<a class="btn btn-warning btn-lg" href="index.php?action=page">
-		Gestion des commentaires</a>
+					
 	</div>
 </div>
