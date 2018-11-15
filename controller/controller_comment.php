@@ -26,7 +26,7 @@ class controllerComment
 	}
 
 	public function allCom($page)
-	{		// Focntion de pagination de l'Admin Comment et création de la vue 
+	{		// Fonction de pagination de l'Admin Comment et création de la vue 
 		$numbMax = $this->comments->numberCom();
 		$comMax = 5;
 		

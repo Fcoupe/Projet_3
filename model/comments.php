@@ -42,7 +42,7 @@ class Comments extends Model
 
 	public function allCom($firstText, $comMax)
 	{		// Récupere et renvoie tout les commentaire 
-		$sql = 'SELECT COM_ID as id,  COM_DATE as date_t, COM_AUTEUR as author, COM_CONTENU as content from T_COM ORDER BY id DESC LIMIT ' . intval($firstText) . ',' . intval($comMax);
+		$sql = 'SELECT COM_ID as id,  COM_DATE as date_t, COM_AUTEUR as author, COM_CONTENU as content, BIl_ID as idBillet, REPORT as report from T_COM ORDER BY report DESC LIMIT ' . intval($firstText) . ',' . intval($comMax);
 		$allComReq = $this->executeReq($sql, array($firstText, $comMax));
 		$allCom = $allComReq->fetchAll();
 		return $allCom;

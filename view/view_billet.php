@@ -7,7 +7,7 @@
 <article >
 	<header class="titleBil">
 		<h1><?= htmlspecialchars($billet['title']) ?></h1>		
-		<time ><?= htmlspecialchars($billet['date_t']) ?>
+		<time ><strong>Posté le : </strong><?= htmlspecialchars($billet['date_t']) ?>
 		</time>
 	</header>
 	<div class="col-lg-12">
@@ -36,18 +36,19 @@
 		<a class="btn btn-warning btn-sm" href="<?= "index.php?action=report&id=" .  $comment['id'] . '&idb=' . $billet['id']; ?>">Signaler commentaire</a>
 	</article>
 	<hr class="hr">
-<div class="row" id="addCom">
+
 	<?php endforeach; ?>
+	<div class="row" id="addCom">
 			<!-- Formulaire d'ajout de commentaire -->
-			<p><h4>Ajouter Commentaire : </h4></p>
-	<form method="post" action="index.php?action=addComments">
-	    <input id="auteur" name="author" type="text" placeholder="Votre pseudo" required /><br />
-	    <textarea id="txtComment" name="content" rows="3" 
-	              placeholder="Votre commentaire" required></textarea>
-	              <br />
-	    <input type="hidden" name="id" value="<?= $billet['id'] ?>" />
-	    <input type="submit" value="Valider" />
-	</form>
+		<p><h4>Ajouter Commentaire : </h4></p>
+		<form method="post" action="index.php?action=addComments">
+		    	<input id="auteur" name="author" type="text" placeholder="Votre pseudo" required /><br />
+		    	<textarea id="txtComment" name="content" rows="3" 
+		              placeholder="Votre commentaire" required></textarea>
+	             <br />
+	    	<input type="hidden" name="id" value="<?= $billet['id'] ?>" />
+	    	<input type="submit" value="Valider" />
+		</form>
 </div>
 
 	

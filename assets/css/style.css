@@ -120,18 +120,18 @@ a:hover {
 
 #addCom {
     text-align: center;
-    border : 1px green solid;
 }
 
 #com {
     text-align: center;
     border: 1px green solid;
+    background-color: #CFFCCF;
 }
 
 #titleCom {
     text-align: center;
     border : 1px green solid;
-    background-color: #CEF19E;
+    background-color: #BCE5BC;
     padding: 5px;
     margin-bottom: 10px;
 }
