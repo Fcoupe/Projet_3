@@ -13,8 +13,8 @@ session_start();
 				<br />
 				<time><?= htmlspecialchars($comment['date_t']) ?></time>
 			</header>
-			<p><br /><?= $comment['content'] ?><br>Nombre de fois singaler : <?= $comment['report'] ?></p>
-			<a class="btn btn-danger btn-xs" href="<?= "index.php?action=deleteComment&id=" . htmlspecialchars($comment['id'] . '&idp=' . $comment['idBillet'])?>">Supprimer le commentaires
+			<p><br /><?= $comment['content'] ?><br>Nombre de fois signalé : <?= $comment['report'] ?></p>
+			<a class="btn btn-danger btn-xs" href="<?= "index.php?action=deleteComment&id=" . htmlspecialchars($comment['id'] . '&idp=' . $comment['idBillet'])?>">Supprimer le commentaire
 			</a>
 			<hr class="hr"/>
 		</article>

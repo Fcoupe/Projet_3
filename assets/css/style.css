@@ -16,6 +16,10 @@ h2 {
     text-align: center;
 }
 
+#h4 {
+    margin-bottom: 0;
+}
+
 img {
         width: 100%;
       }
@@ -122,16 +126,17 @@ a:hover {
     text-align: center;
 }
 
-#com {
+.com {
     text-align: center;
     border: 1px green solid;
     background-color: #CFFCCF;
+    padding-top: 10px;
 }
 
-#titleCom {
+.titleCom {
     text-align: center;
     border : 1px green solid;
     background-color: #BCE5BC;
+    margin-bottom: 0;
     padding: 5px;
-    margin-bottom: 10px;
 }

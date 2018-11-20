@@ -22,7 +22,7 @@ class controllerComment
 	public function deleteComment($idCom, $idBillet)
 	{		// Suppression de Commentaire et redirection
 		$this->comments->deleteCom($idCom);
-		header('Location: index.php?action=billetAdmin&id=' . $idBillet);
+		header('Location: index.php?action=page');
 	}
 
 	public function allCom($page)

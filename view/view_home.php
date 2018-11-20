@@ -49,10 +49,6 @@
 					</a>
 					<time><?= htmlspecialchars($billet['date_t']) ?>
 					</time>
-					<div>
-						<br />
-						<img src="<?= htmlspecialchars($billet['img']) ?>">
-					</div>
 				</header>
 
 				<p><br /><?= $billet['content'] ?></p>
@@ -61,7 +57,7 @@
 
 			<?php endforeach; ?>
 
-			<div id="latestPost" class="hidden-xs col-sm-3 col-md-3 col-lg-3">
+			<div id="latestPost" class="hidden-xs col-lg-offset-9 col-sm-3 col-md-3 col-lg-3">
 				<ul id="listRight">
 					<li><a href="index.php?action=billet&id=1">Billet simple pour l'Alaska</a></li>
 					<li><a href="index.php?action=billet&id=2">Chap.1 Achete ton billet</a></li>
